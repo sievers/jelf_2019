@@ -1,0 +1,1285 @@
+\documentclass[letterpaper,11pt,preprint]{aastex}
+\usepackage{graphics,graphicx}
+\usepackage{natbib}
+\usepackage{color}
+\citestyle{aas}
+
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in} \setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in} \setlength{\headheight}{0in}
+\setlength{\headsep}{0in} \setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\makeatletter
+\newcommand{\mbe}{{\rm MBE}}
+\renewcommand{\section}{\@startsection%                                                                                                                                                                    
+{section}{1}{0mm}{-\baselineskip}%                                                                                                                                                                         
+{0.5\baselineskip}{\normalfont\Large\bfseries}}%                                                                                                                                                           
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+%%%%% Start of document %%%%%                                                                                                                                                                              
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+
+\begin{document}
+\pagestyle{plain}
+%\pagenumbering{gobble}
+
+\section{Introduction}
+
+%Building on the success of the Canadian Hydrogen Intensity Mapping
+%Experiment (CHIME), we propose to build a new transportable back-end
+%for next-generation radio telescopes that can be deployed to
+%radio-quiet sites across the planet.  
+
+% Traditionally, the back-ends were
+%so expensive that it made sense to spend a lot of money on building
+%large dishes and keeping the back-end fixed.  At its heart, the
+%back-end is just a large computer, so Moore's law is having a dramatic
+%impact on the traditional radio-telescope design.  This fact, plus switching to
+%commodity parts, has lead to the back-end cost per incoming signal
+%dropping by orders of magnitude.  In turn, for many science cases it
+%no longer makes sense to build expensive traditional radio
+%telescopes.  Instead, building very many cheap front-end elements
+%coupled with a powerful back-end becomes a natural design.  
+
+As observational cosmologists, we are trying to understand some of the
+most basic properties of the universe.  What is the nature of dark
+energy?  Is the tension between different measurements of the Hubble
+constant pointing to new fundamental physics?  When did the first
+objects in the universe light up?  Were they stars or something else?
+What did the universe look like before these first stars formed, the
+so-called ``cosmic dark ages''?  Can we use fast radio bursts (FRBs)
+as a new probe of cosmology?  In the last few years, radio astronomy
+has become one of our most promising avenues for answering these
+questions.  Driven by Moore's law, a new generation of radio arrays
+consists of relatively inexpensive telescopes connected to a
+``back-end'' of powerful digital electronics.  
+
+Building on the successful technology developed at McGill for the
+Candaian Hydrogen Intensity Mapping Experiment (CHIME
+\citet{Bandura16}), we propose to build the McGill Back-end (\mbe),
+which will handle the inputs from up to 1,024 radio telescopes and
+will process 3.25 terabits per second.  By many measures, the \mbe
+will be the second largest of its kind in the world, surpassed only by
+CHIME itself.  It will be portable and hence can be used to power
+multiple different radio telescopes over its useful life. In the work
+covered by this proposal, we will build and integrate the \mbe at
+McGill.  It will first be deployed as part of the Hydrogen Intensity
+and Real-time Analysis eXperiment (HIRAX \citet{Newburgh16}), the
+southern hemisphere analog to CHIME, where we hope to answer many of
+our questions about the universe.  Concurrently, we will investigate
+sparsely populated areas of northern Canada for promising sites for
+future \mbe deployments, which will address new aspects of cosmology.
+
+\section{Research/Technology Development}
+
+Hydrogen atoms naturally emit radio waves at a frequency of 1.4 GHz or
+a wavelength of 21 cm.  As the universe expands, it stretches out
+photons or ``redshifts'' them, driving them to lower frequencies.
+This simple fact means that observing hydrogen at lower frequencies
+shows us the universe when it was younger and more compact.  A radio
+telescope that observes over a range of frequencies then, in a single
+observation, naturally maps out the universe over a large fraction of
+its life.  We can select {\it{which}} periods of the universe's life
+we look at by selecting the corresponding frequencies.  Flexible
+electronics like the \mbe can then be used to study many different
+phases in the evolution of the universe simply by switching which
+frequencies we feed into it.  This gives us the freedom to keep our
+focus on the most pressing areas of cosmology in a way that was simply
+not feasible in the past.  In this section, we will describe the core
+science goals of the \mbe's first deployment at the heart of HIRAX,
+followed by how how modern radio telescopes work and the role the \mbe
+fills.  Finally, we will describe how northern Canada's rare
+combination of good infrastrucure in sparsely populate areas makes it
+a promising site for future \mbe deployments looking at the very young
+universe.
+
+
+\subsection{HIRAX and the \mbe as  Probes of Dark Energy}
+
+When Albert Einstein worked out the equations of general relativity,
+he saw that the simplest solution did not allow for a static
+universe. Faced with this seeming unpleasantness, Einstein added a
+term to his equations, called the cosmological constant, that he
+thought would allow the universe to be infinitely old.  This term
+arose from fixing the value of an integration constant to counter the
+gravity from matter, and corresponds to giving a non-zero energy
+density to empty space.  When presented with Edwin Hubble's evidence
+for an expanding universe, Einstein dropped the cosmological constant,
+calling it the ``biggest blunder'' of his life.  
+
+There the matter stood for many decades, with the cosmological
+constant being ignored.  From dimensional arguments, its natural value
+is a Planck mass per Planck length cubed, or about $5\times 10^{96}$
+kilograms per cubic metre.  To get a sense of scale for just how huge
+that density is, it corresponds to compressing all the matter in the
+observable universe into a region the size of the nucleus of a single
+atom.  Since the natural value is so large, it only made sense that
+the cosmological constant be precisely zero.  However, as cosmologists
+probed further and further into the universe, things began not quite
+adding up.  In the 80's and 90's, studies of how distant galaxies
+clumped together indicated that large-scale structures weren't growing
+as expected.  In a universe with only matter in it ({\textit{e.g.} \citet{Park94}}.  Then in 
+the late '90's, two separate groups announced that distant supernovae
+were fainter than expected when compared to nearby ones
+\citep{Riess98,Perlmutter99} in work that would lead to the 2011 Nobel 
+prize in physics.  Their data were inconsistent with a matter-only
+universe, but agreed with a universe in which expansion accelerated
+due to a cosmological constant.  Finally, as measurements of the
+cosmic microwave background (CMB) transformed cosmology in the 2000's,
+we began to get percent-level accuracy measurements of the vacuum
+energy contribution, with the latest constraints from the Planck
+satellite indicating that today, vacuum energy makes up
+$68.89\pm0.56$\% of the mass-energy in the universe\footnote{while
+  early CMB measurements needed an external measurement of the Hubble
+  constant to make these statements, the improving measurements of the
+  gravitational lensing of the CMB mean this is no longer
+  true}\citep{Planck2018Params}. 
+
+The disagreement between the natural ($10^{96}$ kg/m$^3$) and observed
+(equivalent to about one atom per cubic metre) values of the vacuum
+energy is ``probably the worst theoretical prediction in the history of physics! \citep{Hobson06}''
+  As such, there is no particularly
+good reason to think that the simplest model, that of a cosmological
+constant, is correct.  Cosmologists have packaged their ignorance by
+calling the vacuum contribution ``dark energy'', with the cosmological
+constant but one of many possible models \citep{Ratra88,Steinhardt99}.
+It {\textit{may}} turn out that a cosmological
+constant is a good description, but it may well not.  If cosmologists
+were to find that the vacuum energy changes with time, it would
+radically reshape our view of the universe.  So far, the data we have
+in-hand are broadly consistent with constant dark energy within rather large
+errors, but it is of the utmost importance to probe that by pushing to
+higher sensitivity and earlier times in the universe, where time
+evolution might be more apparent.  The need for improved dark energy
+measurments over a broad range of time is particularly pressing because measurements of the
+Hubble constant taken at low and high redshifts now disagree at the
+5-$\sigma$ level.  If this discrepancy is found to be real and not due
+to systematic errors, it could point to evolving dark energy (see
+{\it{e.g.}} \citet{Freedman2017}).
+
+
+%One way that dark energy is often
+%parameterized is in terms of an {\textit{equation of state}}, where
+%$w=\mathrm{P}/\rho$, where $\mathrm{P}$ is the pressure associated
+%with dark energy, an $\rho$ is the energy density.  For a pure
+%cosmological constant, $w=-1$.  A further generalization is to let $w$
+%be a function of the size of the universe, $w(a)=w_0+(1-a)w_a$.  In
+%this parameterization (others are possible), $a$ is the scale factor, the ratio of the size
+%of the universe at a given point in time relative to the size today,
+%and is the inverse of one plus the redshift $z$, $a=\frac{1}{1+z}$.  
+%By definition, $a$ today is equal to one, and so measuring $w_0$ tells
+%us about the modern day behaviour of dark energy, and $w_a$ tells us
+%something about how that behaviour changes with time.  In these terms,
+%the best current constraints are $w_0=-0.961 \pm 0.077$ while
+%$w_a=-0.28^{+0.31}_{-0.27}$ \citep{Planck2018Params}.  So, while the
+%evidence that dark energy behaves close to a cosmological constant
+%today is moderately good, our limits on its evolution are very weak.
+%This parameterization also has been used as a way of quickly comparing
+%different experiments via the dark energy figure of merit (FoM), which
+%is just one over the area of the 1-$\sigma$ contours in the $w_0,w_a$
+%plane.  
+
+Fortunately, nature has given us ways to map out the story of dark
+energy, which affects how the universe has expanded as a
+function of time.  The detection using supernovae relied on
+the fact that astronomers think they know their true brightness and
+can use them as {\textit{standard candles}}.  With a standard candle,
+by comparing the observed brightness of an object with its known true
+luminosity, one can work out its distance.  So, when supernovae
+appeared fainter than their measured redshfits would have predicted,
+dark energy was a natural explanation.  In addition to standard
+candles, we can also use {\textit{standard rulers}}, a population of
+things whose intrinsic size we know.  Then by comparing the observed
+angular size we see to the known true size, we can again work out a
+distance.  Nature has helpfully filled the universe with such standard
+rulers, called baryon acoustic oscillations (BAOs).  
+
+% BAOs arise from
+%the first few hundred thousand years of the universe, when the density
+%was nearly uniform everywhere and sound waves are the natural
+%description.  The sound waves were driven by gravity and by pressure
+%from free electrons dragging photons with them via Thomson
+%scattering.  About 400,000 years after the big bang, the free
+%electrons and protons very quickly combined to form neutral hydrogen
+%atoms.  With no more free electrons, the sound waves stopped, and
+%density perturbations began to grow simply via gravity, with their
+%relative amplitudes frozen in.  We see these amplitudes today
+%imprinted in the distribution of galaxies, with galaxy positions
+%correlated on $\sim$500 million light-year scales today.  These ripples are
+%called {\textit{baryon acoustic oscillations}} or BAOs.
+
+BAOs arise from the same physics in the first 400,000 years after the
+big bang that gives rise to the cosmic microwave background (CMB)
+power spectrum.  Because the size scale of BAOs is set during the
+young universe, and the CMB power spectrum is exquisitely well
+measured \citep{PlanckSpectra2015,Louis2017,Henning2018} cosmologists
+understand very well how to tie the basic physics of the universe to
+the BAO scale.  The BAO scale turns out to be large ($\sim$500 million
+light years today), so their physics remains essentially linear, and
+they simply scale with the size of the universe.  Therefore they
+provide an almost ideal population of standard rulers. By observing
+their angular size, we can map the history of dark energy.
+
+The first detection of BAOs \citep{Eisenstein05} was made mapping
+individual galaxies, but the very large scale of BAOs gives us another
+tool, that of {\textit{intensity mapping}}.  Given the large size,
+there can be hundreds of thousands of galaxies in any BAO volume, and
+so one can take a very low-resolution image of the sky that averages
+over large numbers of them.  The 21cm hydrogen line is an especially
+attractive tool for doing this.  Because hydrogen is the most abundant
+element in the universe, the 21 cm line is relatively strong, and
+unlikely to be confused by other radio spectral lines.  So, a radio
+telescope that can map the sky at low resolution over a broad
+frequency range can make a full 3-dimensional image of the BAOs, and
+therefore trace out the history of dark energy.
+
+HIRAX will be an array designed to measure the BAO spectrum over a
+large area (up to 15,000 square degrees, or about 40\% of the sky) and
+a large fraction of the history of the universe (from 2 to 6 billion
+years after the big bang, or redshift from 2.5 to 0.8).  We need this
+large volume and time range to measure enough BAO volumes that we have
+good statistics, and to see how dark energy is affecting the growth of
+the universe.  The hydrogen emission is faint ($100 \mu \mathrm{K}$),
+so we need a very sensitive telescope.  The signal is on large
+(degree) scales, though, so we do not need a very high resolution
+telescope.  These facts set the HIRAX design of $\sim$ 1000
+close-packed 6m-diameter dishes.  We plan to build HIRAX in stages,
+first with 128 dishes, then 512, and finally a full array of 1,024
+dishes.  With 512 dishes, HIRAX constrains the evolution of dark
+somewhat better than current measurements from all of cosmology (see
+Figure \ref{fig:hirax_de}).  Measured by the dark energy task force
+figure of merit\footnote{The figure of merit is defined relative to a
+  model where the dark energy equation of state has a constant term
+  $w_0$ and and term that evolves with the size scale of the universe
+  $w_a$ where the size scale $a\equiv(1/1+z)$.}, HIRAX-512 will have a
+figure of merit of 103, compared to the current state of the art of 95
+(from CMB+BAO+supernovae, \citet{Planck2018Params}).  Crucially, HIRAX
+is sensitive at earlier times than current measurements. So, if dark
+energy became important earlier than in the cosmological constant
+model, HIRAX is significantly better situated to observe this than
+current measurements.  Similarly, should HIRAX progress to the full
+1024-element stage, at a FoM of 285, it will be comparable to or better than
+next-generation surveys such as eBOSS in the 100-200 range
+\citep{Zhao2016}.
+
+
+%Hydrogen atoms naturally emit radio waves at a frequency of 1.4 GHz,
+%but the photons emitted long ago get stretched out by the expansion of
+%the universe.  This stretching means we see these photons today at
+%lower frequencies, with the observed frequency telling how far back in
+%time we are looking.  So, we can use sensitive radio arrays to look at
+%low frequencies and see the universe as it was billions of years ago.
+%Key science questions we can address with hydrogen observations
+%include: what is the nature of dark energy, that is accelerating the
+%expansion of the universe?  When did the first objects in the universe
+%light up?  Were they stars or something else? What did the universe
+%look like before these first stars formed, the so-called ``cosmic dark
+%ages''?  What are fast radio bursts, mysterious objects that flash
+%brightly for a thousandth of a second?  A new generation of radio
+%telescopes is poised to answer these fundamental questions about our
+%universe.  Key to this new generation is the harnessing of Moore's law
+%to combine the signal from ever larger numbers of individual detectors
+%together enabling them to work as one coherent telescope array.  The
+%actual radio telescopes and amplifiers change depending on the science
+%questions, but the ``back-end'' that processes and combines the
+%signals from the array looks very similar for all of these questions.
+
+%Arrays of radio telescopes
+%consist of collecting elements (often, but not always, dishes) with
+%sensitive receivers that amplify the incoming radio waves.  These
+%{\textit{front-ends}} then send their signals to a central location where the
+%{\textit{back-end}} processes the incoming signals and combines them together to
+%produce scientifically useful data.  
+
+%We propose to build the McGill back-end (\mbe), a deployable back-end
+%capable of processing 1,024 input streams with a combined data rate of
+%3.25 terabits per second.  We will use the \mbe to try to answer some
+%of these fundamental questions about the universe.  Based on
+%technology successully developed for the Canadian Hydrogen Intensity
+%Maping Experiment (CHIME), its initial deployment will be to South
+%Africa where it will form the heart of the southern analog to CHIME,
+%the Hydrogen Intensity and Real-time Analysis eXperiment (HIRAX).
+%During HIRAX's four year observing run, we will search sites in
+%northern Canada for locations free from human-generated interference,
+%laying the groundwork for the next deployment of the \mbe.  Measured by the number
+%of input streams processed together, this back-end will be the second
+%largest in the world, second only to CHIME itself.  Due to the huge
+%volume of data processed, we need to bring the \mbe\ to remote sites,
+%rather than build the extensive infrastructure to bring terabits per
+%second of data back to Montreal.    
+
+
+% This
+%transformation has led to the a new model in which many inexpensive
+%telescopes are piped into increasingly sophisticated digital%
+%``back-ends'' that process vast amounts of data.  These back-ends are
+%becoming increasingly flexible, capable of handling signal from a wide
+%range of radio telescopes operating over wide ranges of frequency.
+%This enables a new mode where the same back-end can be used with many
+%different telescopes answering a wide range of basic questions about
+%the universe.  However, practical considerations coupled with the
+%questions being asked strongly influences the ideal sites to place
+%radio telescopes.  Moore's law has now made it possible to make
+%cutting-edge back-ends portable.  
+%We propose to build a deployable
+%back-end capable of processing 1,024 input streams with a combined
+%data rate of 3.25 terabits per second.  Based on technology
+%successully developed for the Canadian Hydrogen Intensity Maping
+%Experiment (CHIME), its initial deployment will be to South Africa
+%where it will form the heart of the southern analog to CHIME, the
+%Hydrogen Intensity and Real-time Analysis eXperiment (HIRAX).  During
+%HIRAX's four year observing run, we will search sites in northern
+%Canada for sites free from human-generated interference, laying the
+%groundwork for the next deployment.  Measured by the number of input
+%streams processed together, this back-end will be the second largest
+%in the world, second only to CHIME itself.
+
+%\section{Research/Technology Development}%
+
+%The Hydrogen Intensity and Real-time Analysis eXperiment
+%\citep{Newburgh16} is a planned radio aray that will be sited in the 
+%South African Karoo desert, on the future Square Kilometre Array (SKA)
+%site.  HIRAX will consist of a large number of 6 metre diameter dishes
+%(up to 1,024), in a compact layout.  Two of the central questions
+%HIRAX will address are what is the nature of dark energy?  And what
+%are fast radio bursts?  With its southern hemisphere location, HIRAX
+%will also be perhaps the premier instrument for discovering new
+%pulsars outside of the plane of the Milky Way.   Since the first
+%deployment of the McGill back-end (\mbe) will be with HIRAX, we
+%describe its science case first, followed by the essentials of how a
+%radio telescope works and how the \mbe\ fits into HIRAX.  We then
+%describe the current status and deployment plans for HIRAX, and
+%discuss its complementarity it to CHIME.
+%%the Canadian Hydrogen Intensity Mapping Experiment (CHIME).  
+
+%\subsection{HIRAX as a Probe of Dark Energy}
+
+%When Albert Einstein worked out the equations of general relativity,
+%he saw that the simplest solution did not allow for a static
+%universe. Faced with this seeming unpleasantness, Einstein added a
+%term to his equations, called the cosmological constant, that he
+%thought would allow the universe to be infinitely old.  This term
+%arose from fixing the value of an integration constant to counter the
+%gravity from matter, and corresponds to giving a non-zero energy
+%density to empty space.  When presented with Edwin Hubble's evidence
+%for an expanding universe, Einstein dropped the cosmological constant,
+%calling it the ``biggest blunder'' of his life.  
+
+%There the matter stood for many decades, with the cosmological
+%constant being ignored.  From dimensional arguments, its natural value
+%is a Planck mass per Planck length cubed, or about $5\times 10^{96}$
+%kilograms per cubic metre.  To get a sense of scale for just how huge
+%that density is, it corresponds to compressing all the matter in the
+%observable universe into a region the size of the nucleus of a single
+%atom.  Since the natural value is so large, it only made sense that
+%the cosmological constant be precisely zero.  However, as cosmologists
+%probed further and further into the universe, things began not quite
+%adding up.  In the 80's and 90's, studies of how distant galaxies
+%clumped together indicated that large-scale structures weren't growing
+%as expected.  In a universe with only matter in it ({\textit{e.g.} \citet{Park94}}.  Then in 
+%the late '90's, two separate groups announced that distant supernovae
+%were fainter than expected when compared to nearby ones
+%\citep{Riess98,Perlmutter99} in work that would lead to the 2011 Nobel 
+%prize in physics.  Their data were inconsistent with a matter-only
+%universe, but agreed with a universe in which expansion accelerated
+%due to a cosmological constant.  Finally, as measurements of the
+%cosmic microwave background (CMB) transformed cosmology in the 2000's,
+%we began to get percent-level accuracy measurements of the vacuum
+%energy contribution, with the latest constraints from the Planck
+%satellite indicating that today, vacuum energy makes up
+%$68.89\pm0.56$\% of the mass-energy in the universe\footnote{while
+%  early CMB measurements needed an external measurement of the Hubble
+%  constant to make these statements, the improving measurements of the
+%  gravitational lensing of the CMB mean this is no longer
+%  true}\citep{Planck2018Params}. 
+
+%The disagreement between the natural ($10^{96}$ kg/m$^3$) and observed
+%(equivalent to about one atom per cubic metre) values of the vacuum
+%energy is ``probably the worst theoretical prediction in the history of physics! \citep{Hobson06}''
+%  As such, there is no particularly
+%good reason to think that the simplest model, that of a cosmological
+%constant, is correct.  Cosmologists have packaged their ignorance by
+%calling the vacuum contribution ``dark energy'', with the cosmological
+%constant but one of many possible models \citep{Ratra88,Steinhardt99}.
+%It {\textit{may}} turn out that a cosmological
+%constant is a good description, but it may well not.  If cosmologists
+%were to find that the vacuum energy changes with time, it would
+%radically reshape our view of the universe.  So far, the data we have
+%in-hand are consistent with constant dark energy within rather large
+%errors, but it is of the utmost importance to probe that by pushing to
+%higher sensitivity and earlier times in the universe, where time
+%evolution might be more apparent.  One way that dark energy is often
+%parameterized is in terms of an {\textit{equation of state}}, where
+%$w=\mathrm{P}/\rho$, where $\mathrm{P}$ is the pressure associated
+%with dark energy, an $\rho$ is the energy density.  For a pure
+%cosmological constant, $w=-1$.  A further generalization is to let $w$
+%be a function of the size of the universe, $w(a)=w_0+(1-a)w_a$.  In
+%this parameterization (others are possible), $a$ is the scale factor, the ratio of the size
+%of the universe at a given point in time relative to the size today,
+%and is the inverse of one plus the redshift $z$, $a=\frac{1}{1+z}$.  
+%By definition, $a$ today is equal to one, and so measuring $w_0$ tells
+%us about the modern day behaviour of dark energy, and $w_a$ tells us
+%something about how that behaviour changes with time.  In these terms,
+%the best current constraints are $w_0=-0.961 \pm 0.077$ while
+%$w_a=-0.28^{+0.31}_{-0.27}$ \citep{Planck2018Params}.  So, while the
+%evidence that dark energy behaves close to a cosmological constant
+%today is moderately good, our limits on its evolution are very weak.
+%This parameterization also has been used as a way of quickly comparing
+%different experiments via the dark energy figure of merit (FoM), which
+%is just one over the area of the 1-$\sigma$ contours in the $w_0,w_a$
+%plane.  
+
+%Fortunately, nature has given us ways to map out the story of dark
+%energy.  Dark energy affects how the universe has expanded as a
+%function of time.  So, if we map that expansion out, we can work out
+%the nature of dark energy.  The detection using supernovae relied on
+%the fact that astronomers think they know their true brightness and
+%can use them as {\textit{standard candles}}.  With a standard candle,
+%by comparing the observed brightness of an object with its known true
+%luminosity, one can work out its distance.  So, when supernovae
+%appeared fainter than their measured redshfits would have predicted,
+%dark energy was a natural explanation.  In addition to standard
+%candles, we can also use {\textit{standard rulers}}, a population of
+%things whos intrinsic size we know.  Then by comparing the observed
+%angular size we see to the known true size, we can again work out a
+%distance.  Nature has helpfully filled the universe with such standard
+%rulers, called baryon acoustic oscillations (BAOs).  BAOs arise from
+%the first few hundred thousand years of the universe, when the density
+%was nearly uniform everywhere and sound waves are the natural
+%description.  The sound waves were driven by gravity and by pressure
+%from free electrons dragging photons with them via Thomson
+%scattering.  About 400,000 years after the big bang, the free
+%electrons and protons very quickly combined to form neutral hydrogen
+%atoms.  With no more free electrons, the sound waves stopped, and
+%density perturbations began to grow simply via gravity, with their
+%relative amplitudes frozen in.  We see these amplitudes today
+%imprinted in the distribution of galaxies, with galaxy positions
+%correlated on $\sim$500 million light-year scales today.  These ripples are
+%called {\textit{baryon acoustic oscillations}} or BAOs.
+
+%Because the size scale of BAOs is set during the young universe,
+%cosmologists understand very well how to tie the basic physics of the
+%universe to the BAO scale.  Because the BAO scale is so large, their
+%size just scales with the expansion of the universe.  Therefore they
+%provide an almost ideal population of standard rulers - we know how
+%big they are physically given how much the universe has expanded, and
+%so by observing their angular size, we can map the history of dark
+%energy.  
+
+%The first detection of BAOs \citep{Eisenstein05}
+%was made with galaxies, but the very large scale of BAOs gives us
+%another tool, that of {\textit{intensity mapping}}.  Given the large
+%size, there can be hundreds of thousands of galaxies in any BAO
+%volume, and so one can take a very low-resolution image of the sky
+%that averages over large numbers of them.  The hyperfine emission line
+%of atomic hydrogen is an especially attractive tool for doing this.
+%Hydrogen atoms in the universe radiate at a rest frequency of 1.4 GHz
+%(or a wavelength of 21 cm) due to the energy difference between the
+%proton and electron sping being aligned and anti-aligned.  Because
+%hydrogen is the most abundant element in the universe, this makes the
+%21 cm line relatively strong, and unlikely to be confused by other
+%radio spectral lines.  So, by making a low-resolution map of hydrogen
+%emission, we can trace out the BAOs.  Furthermore, because the
+%expansion of the universe stretches out the 21cm photons, by observing
+%at longer wavelengths, we can see the universe when it was younger.  A
+%radio telescope that can map the sky with over a broad frequency range
+%then can make a full 3-dimensional image of the BAOs, and therefore
+%trace out the history of dark energy.  
+
+%HIRAX will be an array designed to measure the BAO spectrum over a
+%large area (up to 15,000 square degrees, or about 40\% of the sky) and
+%a large fraction of the history of the universe (from 2 to 6 billion
+%years after the big bang, or redshift from 2.5 to 0.8).  We need this
+%large volume and time range to measure enough BAO volumes that we have
+%good statistics, and to see how dark energy is affecting the growth of
+%the universe.  The hydrogen emission is faint ($100 \mu
+%\mathrm{K}$), so we need a very sensitive telescope.  The signal is on
+%large (degree) scales, though, so we do not need a very high
+%resolution telescope.  These facts set the HIRAX design of $\sim$ 1000
+%close-packed 6m-diameter dishes.  We plan to build HIRAX in stages,
+%first with 128 dishes, then 512, and finally a full array of 1,024
+%dishes.  With 512 dishes, HIRAX constrains the evolution of dark
+%energy comparable to current measurements from all of cosmology (see
+%Figure \ref{fig:hirax_de}, and at 1,024 elements is comparable to
+%next-generation experiments.  
+
+
+\begin{figure}[tbh]
+  \includegraphics[height=2.5in]{hirax_bao_ps.pdf}
+  \includegraphics[height=2.5in]{hirax_de_constraints.pdf}
+\caption{\small Left:  HIRAX measurement of BAOs as a function of
+  length.  Blue/yellow/green are for four years of 50\% efficiency
+  observations with 128/512/1024 dishes.  The size of the ripples
+  decreases to the right, and the ripples are the periodic structure
+  frozen in at recombination, when neutral hydrogen atoms formed.
+  Right:  HIRAX constraints on dark energy cast in the $w_0,w_a$
+  plane.  With 512 dishes, HIRAX alone will improve on the current
+  state of cosmology, which has a figure of merit of 95 (from
+  CMB+BAO+supernovae, \citet{Planck2018Params}).  With the full 1024
+  dishes, HIRAX will be comparable to next-generation dark energy
+  surveys, which typically have figures of merit of $\sim 200$.
+  \label{fig:hirax_de}
+}
+\end{figure}
+
+\subsection{HIRAX as a Probe of Fast Radio Bursts}
+Fast radio bursts (FRBs) are some of the most enigmatic objects in the
+universe.  The first one was discovered by \citet{Lorimer07} in 2007,
+just a decade ago.  As far as we know, they flash once, brightly, for
+a thousandth of a second, and are generally never seen again (only two
+FRBs have been seen to repeat).  While we know virtually nothing 
+about what FRBs are, they almost certainly arise from well outside the
+Milky Way.  While theories abound, what truly gives rise to these
+flashes bright enough to be seen from across the universe is a
+mystery.  While we expect several thousand visible FRBs per day, the small
+fields of view of current telescopes means that since their discovery,
+only aroun 60 have been discovered, so their properties are not well understood.
+
+While HIRAX was designed to study dark energy, it is also a nearly ideal
+instrument to find FRBs.  With 6m dishes operating between 400 and 800
+MHz, the HIRAX field of view is $\sim 25-50$ square degrees, dozens of
+times larger than telescopes that have found most of the FRBs
+to-date\footnote{The combined area of the Parkes multi-beam receiver,
+  which has found about 75\% of the FRBs listed at frbcat.org, is
+  under a square degree}.  The compact layout of HIRAX improves the
+efficiency of the FRB search as well.  Modern algorithms have
+reduced by orders of magnitude the computational load of searching a
+single beam for FRBs, to the point that HIRAX will be able to search
+the $\sim$thousand beams that fill its entire field of view.
+Telescopes built for high resolution, however, struggle to do this,
+and so they are likely to miss many events.  HIRAX's high efficiency,
+along with the sensitivity from having nearly 30,000 square metres of
+collecting area, means that we expect to find nearly as many FRBs
+{\textit{per day}} as have been reported in total to-date.  While the
+rate in the HIRAX band is still uncertain, CHIME has recently reported
+FRB detections \citep{CHIME_ATEL} implying that pessimistic estiamtes
+for the rate have already been ruled out.  
+
+While a critical step to understanding what FRBs are is finding more,
+an equally important step is to get accurate positions for them.  With
+sufficiently accurate positions, extragalactic FRBs can be tied to a
+host galaxy.  With a host galaxy, one can measure a reshift, and hence
+a distance, to the FRB.  With a distance, one can finally infer an
+energy scale for the bursts.  So far, despite extensive searches, only
+a single FRB has been seen to repeat.  Knowing where to look,
+astronomers have pinpointed its location to a dwarf galaxy roughly 2.5
+billion light years away ($z=0.19$).  Hundreds of bursts have now been
+seen from the repeater, so we fundamentally do not know if it is even
+typical of the FRB population.  {\textit{No non-repeating FRB has yet
+    to be localized.}}  HIRAX will change the field.  We will build
+HIRAX outrigger stations with partner instutions spread across Africa.
+With a total of several dozen inexpensive dishes at a handful of
+sites, HIRAX will be able to determine the positions of a large
+fraction of non-repeating FRBs to a thirtieth the size of typical
+distant galaxies (0.03 arcsecond accuracy for 15$\sigma$ detection in
+the core array).  Not only will HIRAX be able to localize thousands of
+FRBs, it will be able to say where within galaxies do FRBs arrive.  If
+FRBs are found to originate near the cores of galaxies, their
+progenitors are likely to be very different than if they arise from
+the outskirts.  With localizations, we can even start to think using
+FRBs as probes of cosmology, since they exquisitely measure the
+electron column density along the line of site. This was first pointed
+out in \citet{McQuinn2014}, who showed that FRBs could be used to
+locate the ``missing baryons''. In work nearing release, we will show
+that FRBs can also be used to probe the kinetic Sunyaev-Zeldovich
+effect, which measures the product of mass times velocity for
+cosmological flows \citep{Madhavacheril18} in CMB observations.  
+With support from the Perimeter Institute, we are
+actively developing outrigger sites at the Hartebeesthoek Radio
+Astronomy Observatory (HARTRAO) ouside of Johannesburg, South Africa,
+at the Botswana International University of Science and Technology
+(BIUST) in Palapye, Botswana, and at the Rwanda campus of the African
+Institute for Mathematical Sciences (AIMS-Rwanda).  No current array
+has the capability to discover and localize the thousands to tens of
+thousands of FRBs we expect from HIRAX.  
+
+\subsection{Radio Telescopes and the McGill Back-End}
+
+An array of radio telescopes works by measuring the raw electric
+fields from each individual telescope, and combining the signals from
+every pair of telescopes.  This coherent combination of all the pairs
+of telescopes lets the array work as a single whole, with
+diffraction-limited resolution set not by the size of the individual
+telescopes, but by the size of the array as a whole.  While individual
+radio telescopes tend to have very poor resolution, arrays of radio
+telescopes (often called interferometers) have given astronomers the
+highest-resolution images ever taken.  For instance, the Event Horizon
+Telesope, which combines telescopes across the 
+planet to try to image black holes, could resolve an orange on the moon\footnote{60
+micro-arcseconds resolution -
+https://eventhorizontelescope.org/building-larger-array}.  
+
+The way that interferometers combine the signals has a major impact on
+the design, so we here lay out the basics of how they work.  First,
+individual elements collect and amplify incoming radio waves.  These
+elements might look like traditional radio telescopes, with large
+parabolic reflectors (examples include JVLA, ALMA, MeerKAT, amongst
+many others).  They might however consist of individual antennas
+(PAPER, LWA), or multiple antennas hooked together with a first analog
+combination stage (MWA, LOFAR), or even long cylinders with amplifiers
+strung down the centre (CHIME, Ooty, UTMOST).  For modern digital
+correlators, the next step is to digitally sample the electric fields,
+and then use Fourier transform-based techniques to split the signals
+into many narrow frequency channels.  At this point, all the frequency
+channels from one antenna are together, but since we want to combine
+all pairs of antennas together, we have to re-shuffle our data.  One
+can think of the data as a 3-dimensional array, with time along one
+axis, frequency along the second, and antenna number along the thirds.
+This reshuffling, called the ``corner turn'' by radio astronomers,
+amounts to take a matrix transpose in the frequency-antenna plane.
+Once the data have been grouped by frequency, then every pair of
+antennas are cross-correlated, which is mathematically equivalent to a
+matrix multiply.  This design, where the data are split into frequency
+channels, then cross-correlated, is called an FX correlator.  The part
+that carries out the frequency splitting is usually referred to as the
+F-engine, and the part that does the cross-correlation as the
+X-engine.  The time-averaged cross correlation of a pair of antennas
+(referred to as a baseline) is called a visiblility, and is the
+fundamental output of a radio interferometer.
+
+While the individual steps in an FX correlator are conceptually
+simple, the challenge is handling the truly immense amounts of data.
+For the 512-dish version of HIRAX, we will have 1024 signals coming
+into the \mbe, each with 400 megahertz of bandwith.  Using 4-bit
+samples, that works out to over 3.2 terabits of data per second.  That
+is nearly 20 times the data rate of the entire CANARIE network (2017
+average), which services 157 Canadian higher education institutions
+and over a million
+users\footnote{https://www.canarie.ca/about-us/facts/}.  The McGill
+back-end (\mbe) will take the incoming radio-frequency (RF) signals,
+digitally sample them, split them into component channels, and carry
+out the corner turn using custom backplanes.  It will then pass the
+corner-turned data to a graphics processing unit (GPU)-based
+correlator that will actually calculate the visibilities.  Each crate
+with a custom backplane in the \mbe\ has 16 FPGA-based ICE boards
+(developed by Matt Dobbs' group at McGill).  Each board handles 16
+inputes, so a full crate works on 256 input RF streams.  The backplane
+in the crates carries out the corner turn for its 256 inputs, sending
+signals out over 10 gigabit ethernet cables.  For thousand
+element-scale arrays like HIRAX, Each GPU correlator node can take a
+10 Gb link from each \mbe\ crate, completing the corner turn, and the
+many terabits of data can be shuffled without the use of a single
+network switch.  The \mbe\ will sit in a shielded, air-conditioned
+shipping container, which can be integrated in Canada before being
+shipped to the HIRAX site.  The highly modular nature also means that
+the \mbe can be expanded simply by adding more crates should future
+funding permit.  The GPU correlator will be housed in a separately.
+Rapid developments in GPUs mean that the cross-correlation 
+part of back-ends have become obsolete on short timescales.
+For instance, NVidia has improved the on-paper performance on 4-bit
+matrix multiplies, the core of what the GPUs do, by a factor of
+$\sim$50 in about two years.  A single consumer-grade board now has a
+theoretical performance of over 400 teraops for 4-bit matrix
+multiplies.  So, the correlator one would design today is radically
+different from the one CHIME deployed last year.  Converseley, the
+digitizing/channelizing/corner-turning operations that the \mbe\ will
+carry out evolve much more slowly, and use much less power (1.5 kW per
+crate).  By decoupling the F from the X part of the back-end, the
+\mbe\ will remain a powerful tool for many years to come, and can be
+connected to multiple GPU engines over the course of its useful
+lifetime.  This explains why the \mbe\ can be deployed to South Africa
+for HIRAX and then redeployed to northern Canada with a new, by then
+much-cheaper and lower power, GPU engine.
+
+\subsection{HIRAX Deployment Plan and Status}
+
+HIRAX will be one of the largest radio telescopes in the world.
+Hence, we are planning a staged rollout.  In 2017, we built an
+8-element prototype at the Hartebeesthoek Radio Astronomy Observatory
+(HartRAO) outside of Johannesburg, South Africa.  The prototype has
+been invaluable in testing dishes and front end components, and in
+gaining experience with back-end components.  The 8-element prototype
+and its first-light data are shown in Figure \ref{fig:hirax8}.  It
+uses the same custom boards that will go into the \mbe.  The next
+phase will be to build a second prototype on the Radio-frequency
+interference (RFI) protected site of the future Square Kilometre Array
+(SKA), which is also home to MeerKAT, the South African SKA
+pathfinder.  The South African Radio Astronomy Observatories (SARAO)
+has agreed to host HIRAX on SARAO-owned land about 15 km from the core
+MeerKAT site (30.6885S,21.5689E), where the RFI
+environment is excellent in the HIRAX 400-800 MHz band (see right
+panel of Figure \ref{fig:hirax8}). SARAO is in
+the process of rezoning the Swartfontein farm where HIRAX will be
+located, which will be completed in Q3 2019, at which point we will be
+allowed to begin construction on the final site.  We will start with a
+128-element array (HIRAX-128), with observations starting in 2020.
+With 128 elements, we can save all the raw visibility data from the
+array, and finalize and verify the data calibration/compression
+pipeline.  After many months of observations with HIRAX-128, we will
+start construction of a 512-element version.  HIRAX-512 will be an
+extremely powerful radio telescope in its own right, with limits on
+dark energy comparable to our current knowledge from all cosmological
+data combined.  After a year of observing with HIRAX-512, funding
+permitting, we will begin on HIRAX-1024.  We plan to observe with 
+HIRAX-1024 for approximately 4 years, during which we will have
+mapped most of the southern sky.   As part of our site
+agreement, SARAO will provide access to power and data connections for
+HIRAX.  However, that power envelope will be needed by SKA itself when
+it begins operations, at which point HIRAX will cease operations
+ once SKA itself turns on, they will need the power going to HIRAX,
+ and so with the southern survey complete, HIRAX will stop
+ operations.  The \mbe will return to Canada where we will have
+ developed its next observing programme.
+
+
+%30 41 18.73S 21 34 07.98 
+\begin{figure}[tbh]
+  \includegraphics[height=1.4in]{hirax8.png}
+  \includegraphics[height=1.6in]{first_fringe.png}
+  \includegraphics[height=1.6in]{hirax_site_rfi.png} 
+\caption{\small Left: HIRAX 8-element prototype using off-the-shelf
+  Chinese-manufactured 6m dishes.  The back-end uses the same boards
+  that we will use for the \mbe.  Center:  The first-light data from
+  the prototype.  The vertical stripes are human-generated
+  interference (predominantly UHF TV stations). This interference
+  would severely hamper HIRAX's ability to see BAOs.  The ripples at
+  the top of the plot are the interference pattern from a bright
+  source crossing through the field of view and show that the
+  prototype is functioning end-to-end.  Right:  The RFI spectrum from
+  the final HIRAX site on RFI-protected land owned by SARAO.  Unlike
+  the prototype site, where at least half the data are lost to RFI,
+  there is no visible RFI at the sensitivity level of the test
+  equipment in the HIRAX science band.
+  \label{fig:hirax8}
+}
+\end{figure}
+
+
+%\begin{figure}[tbh]
+%  \includegraphics[height=2.5in]{hirax_site_v2_marked.png}
+%  \includegraphics[height=2.5in]{hirax_site_rfi.png}
+%\caption{\small Left: The location of the HIRAX site in the South
+%  African Karoo desert.  The site is about 15 km away from the MeerKAT
+%  core site, and 75 km from Carnarvon, the nearest town.  The site is
+%  on RFI-protected land owned by SARAO.  Right: Daytime RFI spectra
+%  measured from several locations on the HIRAX site.  At the
+%  sensitivity of the test equipment, there is no detectable RFI in the
+%  HIRAX 400-800 MHz band.  Cell phones are visible at 925-950 MHz,
+%  military satellites appear in the 300 MHz range, and
+%  intermittent RFI from airplanes is visible around 1.1 GHz.  Analog
+%  filters will remove the out-of-band RFI at the telescope before
+%  signals are sent to the back-end.
+%  \label{fig:hirax_site}
+%}
+%\end{figure}
+
+
+Much of the development work for HIRAX has been completed, with the
+main challenge scaling to hundreds of dishes.  The technology for the
+\mbe\ was developed for CHIME \citep{Bandura16}, and has been shown to
+work in the field.  Similarly, the GPU correlator \citep{Recnik15}
+works at scale in the field as well, with CHIME having announced their
+first discoveries of FRBs in August\citep{CHIME_ATEL}.  Custom feeds
+have been designed and built, and we continue to iterate to improve
+their noise performance.  The signals from the telescopes will be sent
+via optical fiber to the back-end, in a procedure called radio
+frequency over fiber (RFoF).  Prototype RFoF transmit and receive
+boards have been demonstrated in the field at HartRAO, and the first
+production-scale order has been received and is undergoing testing.
+The main outstanding hardware development is the construction of the
+6m dishes.  We have used cheap ($\sim$800 USD) Chinese-made dishes at
+HartRAO, but their optical design is not ideal for HIRAX (we require
+dishes with a focal ratio of $f=0.25$, which shields the feeds and
+reduces crosstalk between nearby antennas), and the
+manufacturing quality is rather poor.  Consequently, we have been
+working with Canadian and South African partners to develop suitable
+options.  One option is a composite dish with a reflective wire mesh
+embedded in fiberglass.  Canadian HIRAX collaborator Gordon Lacy (NRC)
+has built two half-scale prototypes, and has verified their surface
+accuracy to have an RMS of 350$\mu$m.  This is extremely impressive
+for a 3m dish whose marginal cost is just a few hundred dollars.
+Molds based on these techniques to build a full-scale dish are 
+under production in South Africa.  A second route is laser-cut metal
+dishes, with wire mesh attached to ribs. A full scale prototype has
+been completed, with a second ordered to compare repeatability.
+Samples of the dish prototypes are shown in Figure
+\ref{fig:hirax_dishes}.  We plan to verify the prototypes and make a
+final dish selection by the end of 2018.  
+
+\begin{figure}[tbh]
+  \includegraphics[height=2.5in]{3m_dish.jpg}
+  \includegraphics[height=2.5in]{rebcon_dish.png}
+\caption{\small Left:  Canadian designed and built Half-size composite
+  HIRAX dish prototype (photo credit: Gordon Lacy, NRC).  For a few
+  hundred dollar dish, the surface accuracy is outstanding, with an
+  RMS of 350$\mu$m. Full-scale composite molds are currently being
+  manufactured in South Africa.  Right:  Full-sized metal prototype,
+  built in South Africa.  Surface accuracy and repeatability are still
+  being measured, but we expect them to meet HIRAX specifications.
+  \label{fig:hirax_dishes}
+}
+\end{figure}
+
+
+HIRAX has already received a total commitment of 20,000,000 South
+African Rand (about \$2,000,000 canadian dollars, though exchange
+rates are volatile) from the South African National Research
+Foundation (NRF) and the University of KwaZulu-Natal for hardware
+funding, along with significant funding for graduate students and
+postdocs.  We are fully funded for the HIRAX-128, and with this
+proposal plus expected future fudning from the NRF (not yet finalized
+by highly likely) would be at the level needed for HIRAX-512.  That
+would utilize the full capacity of the \mbe.  We stress that expanding
+the \mbe to handle HIRAX-1024 simply requires buying more ICE board
+crates and installing them in the RF-shielded room.  
+
+\subsection{Complementarity With CHIME} HIRAX follows on the groundbreaking
+work carried out by the CHIME team, while being complementary in many
+key ways.  First and foremost, the dark energy survey is extremely
+challenging.  Foreground emission from the Milky Way is $\sim$1000
+times brighter than the intensity mapping signal we are searching for.
+To succeed, both CHIME and HIRAX will need to exquisitely control
+systematic errors at that part-per-thousand level.  CHIME uses
+cylinders while HIRAX uses dishes, and so the systematics from the
+telescopes should be radically different.  If CHIME and HIRAX agree,
+it strengthens the case for both experiments that the systematics have
+been properly accounted for.  Due to its southern hemisphere location,
+there is virtually no sky in common between HIRAX and CHIME, and the
+results from both can be combined to improve dark energy constraints
+even more.  A fitting analogy is that CHIME and HIRAX will complement
+each other in the same way that the ground-based CMB experiments South
+Pole Telescope (SPT) and the Atacama Cosmology Telescope (ACT) have
+complemented each other, to the benefit of the field.  HIRAX's
+southern hemisphere location also gives it an edge in searching for
+new pulsars, since the pulsar disribution is centered on the galactic
+center, which is in the southern sky.  The HIRAX site looks
+significantly more quiet than the CHIME site in British Columbia,
+where the Canadian government has not taken the step of turning off TV
+stations for radio astronomy.  The nominal collecting area of HIRAX is
+significantly greater.  While CHIME has an impressive 8,000 square
+metres of collecting area, HIRAX-1024 will have just under 30,000
+square metres, a factor of 3 improvement.  This will lead to much
+improved sensitivity to FRBs and pulsars.  The design based on cheap
+dishes also makes building the FRB localization outriggers much
+simpler.  Ideally the outriggers and the main array have the same
+collecting elements, which means they can have the same sky coverage.
+Should CHIME push toward FRB localization, they will have to build
+more cyliners, at what is likely to be significantly greater cost than
+building more HIRAX 6m dishes.  
+
+\subsection{RF Lab and Antenna Development}
+The redshifted hydrogen line can be used in cosmology in many more
+ways than just studies of dark energy.  It is amongst the most
+powerful tools we have to look back in time at the birth of the first
+stars.  For instance, if confirmed, the EDGES detection of a
+stronger-than-expected absorption trough at 78 MHz \citep{Bowman2018}
+could radically reshape our view of the early universe.  The maximum
+expected signal is set by simple phyics, and so the strong signal they
+found would indicate we are missing a major piece in the story of the
+universe.  While we do not propose here for deployments of the
+\mbe\ past its first one, we do wish to lay the groundwork for future
+low-frequency work.  The challenges associated with RFI at lower
+frequencies are even more intense, with FM radio in particular
+blinding most telescopes to a critical time in the universe's history.
+Site selection is a major factor, with places far from civilization
+and sheltered from radio transmissions ideal.  With its sparse
+population but relatively good infrastructure, northern Canada is
+particularly attractive for low-frequency work.  We have deployed
+small radio antennas to remote locations, including possibly the most
+remote radio telescope in the world \citep{PRIZM}.  It is located on
+Marion Island, 2000 km from the closest permanent inhabitants.  This
+proposal will enable the development of a radio lab that we will use
+to build and test more self-contained antennas.  We will then carry
+out site tests at promising locations we will undertake to identify.  
+
+To carry out this work, Cynthia Chiang will develop a radio lab at
+McGill.  The lab will first and foremost have the test equipment
+necessary to verify the performance and integration of the \mbe.  It
+will also be used to build and test the test antenna systems to be
+deployed in the Canadian north.  The lab will house the sensitive
+benchtop RF test equipment (such as vector network analyzers) needed
+for these roles, plus serve as home base to portable RF test equipment
+that can verify system performance in the field.  
+
+
+\section{Researchers}
+PI Sievers has a long history in cosmology with a background
+originally in studies of the CMB (using both inteferometers and
+bolometric cameras), with work on galaxy clusters and parameter
+estimation from gravitational waves, with 21cm cosmology now a central
+part of his work.  He has co-authored over 100 scientific
+publications, with over 10,000 citations and an $h$-index of 54
+(Google Scholar).  One key relevant contribution was developing new
+fast pipelines for searching for FRBs designed for use with HIRAX.  He
+and collaborators tested the pipeline on archival Green Bank Telescope
+(GBT) data, and in the process discovered one of the first FRBs known
+\citep{Masui15}.  This FRB was the first one discovered with the GBT,
+and the first one seen at CHIME/HIRAX frequencies.  Lower-frequency
+searches had not seen any FRBs, and so this was the first event
+clearly showing that CHIME/HIRAX would have things to see.  In
+addition, careful analysis was able to show, although indirectly, that
+this burst must have origin from outside the Milky Way.  It also
+marked the first time that a burst was seen with linear polarization,
+which showed that there was magnetized plasma near the source of the
+FRB.  He is co-PI of HIRAX, and PI of the low-frequency work on
+Marion.  He holds a Canada-150 Research Chair (\$1,000,000/year level)
+and will fund the highly qualified personell required to built, test,
+and deploy the \mbe\ from his C150 funds.  Sievers is an expert in
+data analysis, and has the skills to handle and to train others to
+handle the flood of data that the \mbe\ will produce, and turn it into
+productive science.
+
+Co-I Chiang has a long history of building and deploying instruments.
+After an early start in particle physics, she has worked in Antarctica
+on three separate experiments, BICEP and SPT from the South Pole, and
+the balloon-borne SPIDER from the coastal McMurdo station.  She has also
+worked on data from the Planck Satellite, the team that won the Gruber
+Prize in cosmology for 2018.  She has co-authored well
+over 160 scientific publications, with over 30,000 citations (NASA
+ADS) and an $h$-index of 76.  She is the hardware lead on
+HIRAX, and has led the deployments to Marion Island.  Her work on
+Marion in particular has been challenging since access is via ship
+once per year, for just three weeks.  Even a single missing or broken
+part (without a spare) can delay progress for a year.  She is hardware
+lead for HIRAX, and has overseen the successful construction HartRAO
+prototye, development of the HIRAX custom dishes, and construction and
+deployment of low-frequency antennas.  She has the expertise to
+install the \mbe, and to lead the exploration of northern Quebec for
+good sites for future \mbe\ deployments.
+
+The broader HIRAX team has the strengths required for a successful
+experiment, with participations from around 25 institutions around the
+globe\footnote{Collaborating institutions available at
+  https://www.acru.ukzn.ac.za/~hirax/index.php/team/}.  Most
+critically for the \mbe, McGill Professor Matt Dobbs, who developed
+the FPGA boards at the heart of the \mbe, is a HIRAX collaborator and
+will supply the expertise needed to build the \mbe.  Other key
+Canadian collaborators include Keith Vanderlinde (Toronto) who build
+the CHIME GPU-engine, and Kendrick Smith (Perimeter Institute) who
+enhanced the algorithms in \citet{Masui15} and developed the FRB
+search pipeline successfully used by CHIME. Gordon Lacy (NRC) has
+demonstrated success with half-scale prototype dishes using
+inexpensive materials, and shown the half-scale prototype surface
+accuracy is a third of a millimetre.  Tzu-Ching Chiang (JPL) led
+the first successful intensity mapping detection \citep{Chang10} and
+her group contains experts in electromagnetic simulations modelling
+HIRAX hardware.  Jeff Peterson (Carnegie-Melon) and Kevin Bandura
+(West Virginia University) have long experience with radio-frequency
+components and lead the RF development, and also worked on the first
+intesnity mapping detection.  Laura Newburgh (Yale) brings a wealth of
+experience from work on CHIME, and has played a major role in HIRAX
+deployments to-date.  Aris Karastergiou (Oxford) will lead the pulsar
+search with HIRAX, and Amanda Weltman (University of Cape Town) will
+interpret the dark energy constraints that come from HIRAX.  Kavilan
+Moodley (UKZN) took over as South African HIRAX PI after Sievers
+joined McGill, and oversees coordination with SARAO and site
+preparations.  Together, we have already fielded a working prototype,
+and team members have expertise in all the key areas required to make
+HIRAX work.  With significant funding in place, with contingency
+backstopped by the C150 chair, the team has the skill and experience
+to make the \mbe\ and HIRAX work, and push our understanding of the
+universe forward.
+
+\section{Need for the Infrastructure}
+The mobile nature of the \mbe\ is unique in that it will be the only
+truly mobile world-class back-end.  With the quick pace of GPU
+developments, we expect the \mbe\ will be paired with many different
+GPU engines over its life.  The \mbe\ is an essential part of HIRAX.
+Without it, there will be no HIRAX, and Canada will miss a golden
+opportunity to lead in amongst other things localizing fast radio
+bursts.  By number of input signals, the \mbe\ will be the
+second-largest F-engine in the world, trailing only CHIME (the total
+number of signals coming from the Australian SKA Pathfinder is also larger,
+but they are split into several independent groups and the different
+groups are not processed together).  HIRAX will begin construction
+next year, and so it is on the same timescale as the \mbe.  Crucially,
+there will be an array of radio telescopes to feed into the \mbe.
+While the full HIRAX array is not yet funded, we are actively
+proposing, and are confident we will be able to use the full capacity
+of the \mbe.  
+
+
+Since the hardware will be very
+similar to the F-engine build by Matt Dobbs for CHIME, we have a very
+good indication of its cost.  The ICE boards, digitizers, and custom
+backplanes, with spares, will cost \$729,600 USD, at a conservative
+exchange rate of 0.7, with an effective tax rate of 5\%, plus the cost
+of racks/power supplies to run the \mbe, totals for
+\$1,112,000 CAD.  The RF-shielded enclosure (\$72,000 CAD),
+air-conditioned shipping container, and shipping to/from the South
+African HIRAX site will be \$153,000 CAD (including tax on the
+Canadian-acquired components).  Fortunately, for equipment loaned to
+South African universities for research purposes that will not stay in
+the country, there will be no South African duty or VAT charged on the
+\mbe.  The power in South Africa from the mains is not clean, with
+frequent voltage sags, and power losses.  To keep the \mbe (along with
+the rest of HIRAX) working, we will need a diesel rotary
+uninterruptable power supply (DRUPS).  SARAO has investigated the
+matter carefully, and found these to be the most cost-effective
+solution given the quality of South African electricity.  That cost
+will be about \$376,000 CAD, with UKZN
+purchasing this as an in-kind contribution.  
+
+Specialized lab and field RF test equipment will be \$214,000 CAD
+including tax, and specialized lab RF components including assortments
+of amplifiers, filters, bias tees, FPGA boards etc. will be \$42,000.
+Based on experience building stand-along antennas on Marion, the cost
+per site-testing antennas is \$22,000 USD, split roughly evenly
+between mini shipping containers to move the equipment (and
+environmentally protect the electronics once on site), FPGA boards to
+process the data, batteries to work off-grid, solar panels and
+RF-quiet charge controllers, the antennas and associated RF hardware
+themselves, and miscellaneous computers/drives/custom RF-tight
+enclosures.  With exchange rate and tax, this works out to \$33,000
+CAD per station, and we intend to deploy 3 stations to test a variety
+of sites long enough to truly understand their RFI environment.  This
+gives a total budget of \$99,000 for the base stations.  The total
+request, including tax and matching contributions, is then \$1,996,000
+CAD.  Matching will come from vendors (RF equipment supplier Keysight
+has agreed to CFI matching) and from South African contributions.
+
+
+\section{Benefits to Canada}
+The \mbe\ will be designed, built, integrated, and tested at McGill.
+While its first deployment will be overseas, the installation of the
+\mbe will place McGill in a central location for HIRAX.  Canadian team
+members will have full access to the data, and will be expected to
+participate in all aspects of the data analysis and science outputs.
+This includes members at student, postdoc, and faculty levels.  
+
+The construction of the radio lab at McGill by Cynthia Chiang will
+further strengthen the Canadian and Quebec radio astronomy profile.
+In addition to the training of HQP, most of the equipment for the lab
+will be acquired through Canadian suppliers.  Prototypes will also be
+manufactured in Canada, such as the HIRAX composite dish prototypes
+that have already been designed, built, and characterized at NRC.  
+
+A major component of this proposal is to build hardware to search for
+sites with very low amounts of radio-frequency interference (RFI) for
+the next deployment of the \mbe.  The ideal location for a large array
+is one with access to power and internet, but far from population
+centers.  Northern Quebec is especially attractive for this due to the
+infrastructure accompanying the region's extensive hydropower
+generation.  Multiple fiber optic networks run north, operated by the
+Eeyou Communications Network.  One line runs along the James Bay road
+with several branches cutting west to service towns along the coast.
+A second line runs to the east, passing near Nemaska.  This level of
+infrastructure in some of the least densely populated areas in the
+planet is a truly unique opportunity.  With the revolution in radio
+astronomy enabled by infrastructure like the \mbe, the shift towards
+inexpensive dishes means we can hire local labour to build and install
+future arrays.  This model has already worked well in South Africa,
+where roughly twenty workers with no previous experience have been
+hired to build the Hydrogen Epoch of Reionization Array (HERA),
+another radio array hosted by SARAO.  
+
+The infrastructure requested here aligns well with the Canadian
+long-range astronomy plan, and with the Qu\'ebec Research and Innovation
+Strategy (SQRI).  The \mbe will expand CHIME-like coverage to nearly the full
+sky, while enabling future SKA-type science.  Support for CHIME and
+SKA science are both listed in the Canadian astronomy plan.  The
+\mbe\ will process over 50 exabytes of digital data during its first
+deployment.  That data gets averaged to a daily rate of around 50
+TB/day, or over 70 PB during the life of HIRAX. We will need to
+develop techniques to compress that even further without compromising
+the cosmology research, as well as search it for unexpected signals.
+This aligns with the SQRI goal of analytics of massive datasets.
+Detailed modelling and simulation of our instrument is key to making
+HIRAX successful, and we will require simulations to interpret
+cosmological results (SQRI ``modelling, simulation, and games''
+goal).  Artificial intelligence has been demonstrated for the
+repeating FRB to be a powerful tool to search for more bursts, which
+is another research path enabled by the \mbe\ that we will pursue
+(SQRI ``artificial intelligence'').  
+
+
+\section{Institutional Commitment and Sustainability}
+
+McGill University has made a significant and sustained commitment to
+radio astronomy.  It has been a major part of the successful CFI
+proposal that built CHIME, and led the CFI proposal that added the
+capability to search CHIME data for fast radio bursts.  Without the
+previous commitments from McGill, construction of the \mbe\ described
+here would not be possible.  It would require years of development,
+and be far more expensive.  More broadly, Canada's investment in CHIME
+is what has enable HIRAX, which relies on several key CHIME
+technologies.  McGill has further invested in this area
+through the hiring of Adrian Liu, a theorist working in low-frequency
+radio astronomy.  Indeed, the institutional expertise in this area was
+a major factor in attracting the proposers to McGill.  
+
+The South African Radio Astronomy Observatory has agreed to host the
+core HIRAX site, including the \mbe.  As part of the site agreement,
+SARAO has committed to providing access to power and data connections
+for HIRAX.  The transmission line supplying power to HIRAX also
+supplies the SKA site, and is near capacity, so the SARAO commitment
+to provide access to power is essential.  The University of
+KwaZulu-Natal has committed to site preparations and  backstopping the
+power costs.  The funding already secured for HIRAX is enough to build
+a 128-element array that will run through the \mbe.  
+
+With no moving parts, the reliability of the \mbe\ will be quite high
+as long as the power supply is clean (hence the need for the DRUPS).
+For the HIRAX deployment covered here, the \mbe\ will have a single
+role, simplifying operations.  We have run the ICE board in the HIRAX
+prototype for months without needing human intervention, other than
+rebooting after power outages.  After integration and commissioning,
+the \mbe\ should run in a similarly hands-off manner.  However, given
+the scale of the the infrastructure, we will use operating funds for
+part of an engineer's time to monitor the \mbe, and troubleshoot
+as-needed.  In the event of a board failure (known to be very rare),
+lab boards can be swapped in until replacement boards can be acquired.
+As a holder of a Canada 150 chair, Sievers will cover the
+personnel costs associated with building the \mbe, and any unforseen
+operational costs that may arise.  
+
+Chiang has already been allocated space at McGill suitable for the
+radio lab.  The requested lab infrastructure has no special needs
+beyond basic infrastructure like lab benches and power.  The antennas
+systems to be developed are easily portable, and can be deployed from
+a pickup truck/large SUV-class vehicle.  Operations for these will
+come from her NSERC Discovery Grant (with northern supplement) for
+which she is currently applying.  While the most RFI-sensitive
+science cases may require truly remote locations in the far north
+(such as at the McGill Arctic Research Station on Axel Heiberg
+Island), the logistical challenges of larger scale deployments of the
+\mbe\ make road-accessible regions of Quebec the most natural place to
+search.  Costs associated with these will be quite modest, and Sievers
+will cover any further expenses requires for these test deployments.
+
+\section{Highly Qualified Personel}
+
+
+The infrastructure that is supported by this proposal will provide a
+unique and interdisciplinary training environment for HQP.  The HQP
+will have opportunities to play key roles in the detailed design of
+the MBE, subsystem testing, end-to-end integration, fielding of the
+MBE, and design/construction of new radio telescope stations that will
+be supported by the MBE.  The range of work is diverse and will
+encompass both science and engineering.  In order to achieve the above
+research goals, HQP will will be trained in mechanical and
+electromagnetic design, electronics design and operation, instrument
+characterization techniques, system integration, field work and
+observations, and data analysis.  This type of training, in addition
+to experience in leadership and mentoring, is critical for the next
+generation of young scientists to push fundamental research forward.
+The skills listed above are highly transferable and sought after by
+industry, and the proposed infrastructure will thus open a wide range
+of career options for HQP to contribute the fruits of their training
+to positive socioeconomic growth.  A highly trained workforce is one
+of the primary deliverables from the mission driven innovation
+supported by this proposal.  
+Since the MBE will be installed in multiple locations, the proposed
+infrastucture will involve a strong component of international
+collaboration.  Interactions between HQP in multiple countries will
+foster the growth of a racially- and gender-diverse cohort.  PI and
+co-PI Sievers and Chiang already have an exceptionally strong track
+record in bringing together HQP from a wide range of backgrounds.
+Since starting as permanent faculty in 2013, they have trained a combined total of 26 HQP representing eleven
+different countries (Botswana, Chile, DRC, Ethiopia, Ghana, India, Kenya, South
+Africa, Turkey, USA, Chile), including several students from historically
+disadvantaged backgrounds.  The acquisition of the \mbe\ will enable
+continued training of HQP at a time-averaged rate of 5 HQP per year
+through direct supervision, with many other HQP at other institutions
+trained in Canada an across the world.  HQP trained by Sievers and
+Chiang are: \\
+* 1 research associate: R. Monsalve \\
+* 7 postdocs: M. Aich, B. Saliwanchik, H. Heilgendorff, T. Voytek, K. Knowles, S. Muya-Kasanda, V. Singh \\
+* 5 PhDs: T. Gogo, H. Heilgendorff, D. Olcek, L. Philip, O. Sengate \\
+* 8 MScs: J. Allotey, N. Ghazi, A. Gumba, K. Kesebonye, B. Kushiator, M. Mdlalose, O. Sengate, A. Zungu \\
+* 10 BSc Hons: N. Ghazi, A. Gumba, M. Gumede, K. Kesebonye, T. Moso, S. Ngobese, O. Seremane, W. Roberson, A. Moola, M. Mngqibisa \\
+
+Repeated names in the above list indicate successful completion of
+degrees and continued progress in academic studies.  Career milestones
+listed below include permanent jobs, prize fellowships, and other
+notable achievements of HQP trained by either Sievers or Chiang.  \\
+* V. Singh: Permanent research faculty at the Physical Research
+Laboratory\\
+* A. Zungu: Lecturer position at Sol Plaatje University\\
+* R. Monsalve: Lead postdoc on EDGES, and passed on many other
+opportunities to work on \mbe-related work at McGill.\\
+* M. Aich: Research scientist post, UKZN\\
+* K. Knowles: Square Kilometre Arrray postdoctoral fellowship\\
+* H. Heilgendorff: Square Kilometre Array postdoctoral fellowship\\
+* B. Saliwanchik: postdoctral position at Yale\\
+* O. Sengate: will be first-ever Botswanan astronomy PhD\\
+* J. Allotey: Square Kilometre Array internship, followed by PhD studies at Bristol\\
+* Nearly all other students in the above list have continued on to the
+next stages of their postgraduate studies\\
+
+
+%* In early 2018, six students applied for the Dunlap/UToronto
+%  astronomical instrumentation summer school. Five were accepted,
+%  demonstrating their excellence among international standards. The
+ % students have also participated in numerous other conferences and
+ % workshops.  [ANYTHING NOTEWORTHY TO MENTION HERE?]
+%
+
+%Publications involving HQP:%
+%
+%* L. Philip et al., ``Probing Radio Intensity at high-Z from Marion:%
+% 2017 Instrument,'' submitted to JAI 2018. L. Philip is the lead
+% author and is my PhD student.
+%* M. Jones et al., ``The C-Band All-Sky Survey (C-BASS): design and
+% capabilities'', MNRAS 480, 2018. My postdoc and former PhD student,
+% H. Heilgendorff, played a key role in developing the data analysis
+% methods.
+%* L. Newburgh et al., ``HIRAX: A Probe of Dark Energy and Radio
+% Transients'', Proc SPIE 9906, 2016. One postdoc and two students
+% (B. Saliwanchik, A. Gumba, L. Ngwenya) made critical contributions
+% to instrument construction.
+
+%[POSSIBLY USEFUL TEXT COPIED BELOW, NEEDS MORE WORK]
+
+%These opportunities include interactions with industrial partners that
+%are involved with subsystem manufacturing for our projects. The HQP
+%who we have trained have backgrounds including physics, astronomy,
+%mathematics, and engineering, and this broad spectrum yields many
+%fruitful interactions.
+
+
+
+
+%be very clear about added value to Quebec
+%make sure to have sustainability part
+%can cut down on intro
+%make clear that due to fiber constraints the back end needs to be next to the dishes
+%make more clear who HIRAX collaboration is, and who ``we'' refers to, e.g. HIRAX, Cynthia and me, Canada in general
+%be careful to be clear why we need this tool as a JELF, not as part of a collaboration.  Always come back to own research goals.
+%make clear outriggers are not part of MBE.  ``everything is interconnected, but always come back to what 
+%   we are going to do with infrastructure here.''
+%be clear that timescale to get MBE working is same as timescale to get HIRAX big enough to be used.  
+%   this should go in the need for infrastructure.  be clear that we are still looking, and that 
+%   we can use MBE with the things we already have funded.  
+%get an email from Jo-Ann.  say that we have secured space from parking at McGill for integration here.  Make sure to
+%   mention that containers will be locked/secured.  MAKE SURE TO GET 
+%email site letter to Nathalie/Ada.  need to discuss operation/maintenance.  make clear who is paying for what.  
+%   add that power will be covered by South African side in sustainability.  
+%radio lab for building antennas.  make clear that will be Cynthia's lab at McGill, equipment will stay here, and we need it to
+%    develop the infrastructure.
+%describe in researchers section to be clear that we personally have tools/skills to use equipment here.  
+%    JELF needs to be clear exactly what the role in development, but also in exploitation.  
+%    needs to be clearly seen that we have expertise to exploit.  Matt is essential collaborator that we need
+%    to develop the use of tools for our own research programme.  ``build on expertise Matt has
+%    to go to next step on data where we have the expertise to exploit the data.''
+%explain HIRAX consortium more strongly.  But, make clear we can't continue our research without access
+%    to this piece of equipment.  Benefits to Canada and Quebec should make clear that science focus observations
+%    move strongly to Canada.  
+%McGill have already built something around radio, e.g. CHIME pathfinder, CHIME, demonstrates institutional commitment, and we have
+%    network of collaborators here in place.  Look at CHIME CFIs, Vicki has been on a third one.  We can make clear
+%    that McGill has made a serious commitment to this stuff, and that we can build on what has been funded.
+%    make very clear that HIRAX has been enabled by previous Canadian investments in CHIME, put in sustainability.
+%Use 8% for tax rate.  
+%Be more clear about what is included in DRUPS cost.  Power is operating and doesn't count as in-kind.  
+%    cost to extend power line to DRUPS, data connection are CFI-countable in kind probably.  
+%    write in infrastructure section that installation costs will be born by UKZN.  
+%    add installation costs to make sure line item is large enough.  UKZN should be vendor so 
+%    they show up as in-kind.  UKZN should keep track of any costs/invoices associated with installation.  
+%UKZN Administration needs to co-sign eventually the matching letter.  Nathalie needs to go through funding, site operations, maintenance. 
+%Ada will share blurbs, need to talk about operations and maintenance.  
+%IOF - 30% of 40% CFI, so 12% of CFI, we get 2/3, so 8%= 160K to use over 5 year period.  Should go in text in sustainability.  
+%do not call parts spare parts, make clear they are for lab testing.  ``ICE Board Starter Kit''
+%    Letter from Matt is fine for quote.  
+%Don't talk about second container since coming from elsewhere.  Don't use word ``container'' for GPUs.  
+%Ada will share with us quebec strategy, so we can align.  
+
+
+\bibliographystyle{apj}
+\bibliography{cfi_jelf_sievers}{}
+
+
+%total - 1112+153+376+214+42+33*5
+
+\end{document}
