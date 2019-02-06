@@ -1,0 +1,52 @@
+\documentclass[letterpaper,11pt,preprint]{aastex}
+\usepackage{graphics,graphicx}
+\usepackage{natbib}
+\usepackage{color}
+\citestyle{aas}
+
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in} \setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in} \setlength{\headheight}{0in}
+\setlength{\headsep}{0in} \setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\makeatletter
+\newcommand{\mbe}{{\rm MBE}}
+\renewcommand{\section}{\@startsection%                                                                                                                                                                    
+{section}{1}{0mm}{-\baselineskip}%                                                                                                                                                                         
+{0.5\baselineskip}{\normalfont\Large\bfseries}}%                                                                                                                                                           
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+%%%%% Start of document %%%%%                                                                                                                                                                              
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+
+\begin{document}
+\pagestyle{plain}
+
+\section{Plain Language Summary}
+
+Building on the success of the Canadian Hydrogen Intensity Mapping
+Experiment (CHIME), we propose to build a new transportable back-end
+for next-generation radio telescopes that can be deployed to sites
+across the planet avoiding human-generated interference.  Arrays of
+radio telescopes consist of collecting elements (often, but not
+always, dishes) with sensitive receivers that amplify the incoming
+radio waves.  These {\textit{front-ends}} then send their signals to a
+central location where the {\textit{back-end}} processes the incoming
+signals and combines them together to produce scientifically useful
+data.  When measured by the number of incoming data streams processed
+simultaneously, the McGill back-end (\mbe) proposed here will be the
+second largest in the world.
+
+The first deployment will be to the Hydrogen Intensity and Real-time
+Analysis eXperiment (HIRAX), and array under development in South
+Africa.  Consisting of up to 1024 6m-diameter dishes, HIRAX will study
+dark energy and pinpoint thousands of fast radio bursts, amongst many
+other things.  
+
+During HIRAX operations, we will develop deployable
+low-frequency antennas and use them to search for radio-quiet sites in
+northern Canada, where we can search for the birth of the first
+stars.  This will pave the way for the next deployment of the \mbe.  
+\end{document}
