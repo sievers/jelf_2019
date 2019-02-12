@@ -21,11 +21,30 @@
 %%%%% Start of document %%%%%                                                                                                                                                                              
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
 
-\begin{document}
-\pagestyle{plain}
-%\pagenumbering{gobble}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\headheight=12pt
+\voffset -0.3in
+\textheight=9.0in
+\headsep=18pt
+\lhead{McGill University}
+\rhead{Project \# 38558}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand*{\bibfont}{\tiny}
+%\usepackage{multicol}
+%\usepackage{etoolbox}
+%\patchcmd{\thebibliography}{\section*{\refname}}
+%    {\begin{multicols}{2}[\section*{\refname}]}{}{}
+%\patchcmd{\endthebibliography}{\endlist}{\endlist\end{multicols}}{}{}
 
-\section{Introduction}
+\begin{document}
+\setmainfont{Times}
+%\pagestyle{plain}
+\pagenumbering{gobble}
+\singlespace
+
+%\section{Introduction}
 
 %Building on the success of the Canadian Hydrogen Intensity Mapping
 %Experiment (CHIME), we propose to build a new transportable back-end
@@ -42,6 +61,8 @@
 %no longer makes sense to build expensive traditional radio
 %telescopes.  Instead, building very many cheap front-end elements
 %coupled with a powerful back-end becomes a natural design.  
+
+%{\setstretch{1.0}
 
 As observational cosmologists, we are trying to understand some of the
 most basic properties of the universe.  What is the nature of dark
