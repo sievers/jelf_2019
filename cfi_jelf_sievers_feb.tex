@@ -10,11 +10,24 @@
 \setlength{\headsep}{0in} \setlength{\hoffset}{0in}
 \setlength{\voffset}{0in}
 
+% \makeatletter
+% \newcommand{\mbe}{{\rm MBE}}
+% \renewcommand{\section}{\@startsection%
+% {section}{1}{0mm}{-\baselineskip}%
+% {0.5\baselineskip}{\normalfont\Large\bfseries}}%
+% \makeatother
+
+% HCC's SPACE SAVING MAGIC FOR THE WINZ
+\setlength{\parskip}{0.07in}
+\setlength{\bibsep}{0.05in}
+
 \makeatletter
 \newcommand{\mbe}{{\rm MBE}}
-\renewcommand{\section}{\@startsection%                                                                                                                                                                    
-{section}{1}{0mm}{-\baselineskip}%                                                                                                                                                                         
-{0.5\baselineskip}{\normalfont\Large\bfseries}}%                                                                                                                                                           
+\def\subsize{\@setsize\subsize{12pt}\xipt\@xipt}
+\def\section{\@startsection {section}{1}{\z@}{1.0ex plus 
+1ex minus .2ex}{.2ex plus .2ex}{\large\bf}}
+\def\subsection{\@startsection {subsection}{2}{\z@}{.2ex 
+plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
