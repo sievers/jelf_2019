@@ -34,7 +34,7 @@ plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 %%%%% Start of document %%%%%                                                                                                                                                                              
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
 
-%\usepackage{fontspec}
+\usepackage{fontspec}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \headheight=12pt
@@ -42,7 +42,7 @@ plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 \textheight=9.0in
 \headsep=18pt
 \lhead{McGill University}
-\chead{Sievers \& Chiang}
+%\chead{Sievers \& Chiang}
 \rhead{Project \# 38558}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand*{\bibfont}{\tiny}
@@ -54,7 +54,7 @@ plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 
 \begin{document}
 
-%\setmainfont{Times}
+\setmainfont{Times}
 
 %\pagestyle{plain}
 \pagenumbering{gobble}
@@ -94,10 +94,10 @@ consists of relatively inexpensive telescopes connected to a
 ``back-end'' of powerful digital signal processing electronics.  
 
 Building on the successful technology developed at McGill for the
-Candaian Hydrogen Intensity Mapping Experiment (CHIME
+Canadian Hydrogen Intensity Mapping Experiment (CHIME
 \citet{Bandura16}), we propose to build the McGill back-end (\mbe),
 which will handle the inputs from up to 1,024 radio telescopes and
-will process 3.25 terabits per second.  By many measures, the
+will process 3.25 terabits of data {\it{each second}}.  By many measures, the
 \mbe\ will be the second largest of its kind in the world, surpassed
 only by CHIME itself.  The \mbe\ will be unique in that it will be
 portable and hence can be used to power multiple different radio
@@ -110,9 +110,10 @@ complement to CHIME.
 % where we
 %hope to answer many of our questions about the universe. 
 Sievers and Chiang, are co-PI and hardware lead respectively of the
-international HIRAX collaboration.  Along with our students and
-postdocs, we will use HIRAX and the \mbe\ to answer fundamental questions
-about the universe.
+international HIRAX collaboration, that is building and will use the
+HIRAX telescope.  Along with our students and postdocs, we will use
+HIRAX and the \mbe\ to answer fundamental questions about the
+universe.
 %As co-PI and
 %hardware lead, respectively, of the HIRAX collaboration, proposers
 %Sievers and Chiang, along with their students and postdocs, will have
@@ -120,7 +121,7 @@ about the universe.
 Concurrently, we will investigate sparsely populated areas of northern
 Canada for promising sites for future \mbe\ deployments after HIRAX
 (which will take 4-5 years to survey the southern sky),
-which will address new questions in cosmology.
+answering new questions in cosmology.
 
 \section{Research/Technology Development}
 
@@ -161,7 +162,7 @@ calling it the ``biggest blunder'' of his life.
 
 There the matter stood for many decades, with the cosmological
 constant being ignored.  From dimensional arguments, its natural value
-is a Planck mass per Planck length cubed, or about $5\times 10^{96}$
+is a Planck mass per Planck length cubed, or $\sim 10^{96}$
 kilograms per cubic metre.  To get a sense of scale for just how huge
 that density is, it corresponds to compressing all the matter in the
 observable universe into a region the size of the nucleus of a single
@@ -634,14 +635,17 @@ outrigger stations the collaboration is building across southern
 Africa (and for which funding has already been secured), HIRAX will
 change the field.  With a total of several dozen inexpensive dishes at
 a handful of sites working together with the core array powered by the
-\mbe, HIRAX will be able to determine the positions of a large
+\mbe\ (see the next section for a technical description of how this
+works), 
+HIRAX will be able to determine the positions of a large
 fraction of non-repeating FRBs to a thirtieth the size of typical
 distant galaxies (0.03 arcsecond accuracy for 15$\sigma$
 detections\footnote{The search space for FRBs is so vast that with
   perfectly Gaussian statistics, 9$\sigma$ fluctuations will be a
   regular occurence.  Any non-idealities will drive that up, so
   15$\sigma$ is a conservative but realistic threshold for FRB
-  detections.} in the core array).  Not only will HIRAX plus
+  detections.} in the core array).  
+Not only will HIRAX plus
 outriggers be able to localize thousands of FRBs, it will be able to
 say from where within galaxies FRBs arise.  If FRBs are found to
 originate near the cores of galaxies, their progenitors are likely to
@@ -706,7 +710,7 @@ fundamental output of a radio interferometer.
 While the individual steps in an FX correlator are conceptually
 simple, the challenge is handling the truly immense amounts of data.
 For the 512-dish version of HIRAX, we will have 1024 signals coming
-into the \mbe, each with 400 megahertz of bandwith.  Using 4-bit
+into the \mbe, each with 400 MHz of bandwith.  Using 4-bit
 samples, that works out to over 3.2 terabits of data per second.  That
 is nearly 20 times the data rate of the entire CANARIE network (2017
 average), which services 157 Canadian higher education institutions
@@ -719,6 +723,28 @@ corner-turned data to a graphics processing unit (GPU)-based
 correlator that will actually calculate the visibilities.  The
 digitizing/sampling boards and custom backplanes were developed over
 many years by Matt Dobbs' group at McGill, and successfully power CHIME.
+
+While the raw data rate of the \mbe\ is far too high to store, one
+case where it is directly relevant is in FRB localization.  To make
+visibilities requires electric field-level data, so to localize FRBs
+will require combining the electric fields from the outriggers with
+those measured by the \mbe.  Continuously streaming electric field
+data even from a small number of outriggers is prohibitive - for
+instance, moving the raw data from an 8-dish station in Botswana would
+exceed the entire countries international internet bandwidth.
+Instead, the last 1-2 minutes of raw data from the \mbe\ will be
+cached in RAM (probably by the GPU nodes in the X-engine).  When HIRAX
+detects an FRB, the raw data will be saved to disk, and the outriggers
+will be alerted that an FRB has gone off.  The outriggers will then
+write their electric field cache to disk, and send just that bit of
+data back.  The outrigger electric fields can then be combined with
+the electric fields measured by the \mbe\ to localize FRBs.  By
+themselves, the outriggers will not have enough sensitivity to find
+FRBs, and HIRAX does not have the resolution to localize them, but by
+working together, we will be able to localize non-repeating bursts.
+Of course, the data rate from the \mbe\ is so huge that even saving
+1-2 minutes of raw data requires 25,000-50,000 GB of RAM.
+
 % Each crate
 %with a custom backplane in the \mbe\ has 16 FPGA-based ICE boards
 %(developed by Matt Dobbs' group at McGill).  Each board handles 16
@@ -729,6 +755,8 @@ many years by Matt Dobbs' group at McGill, and successfully power CHIME.
 %10 Gb link from each \mbe\ crate, completing the corner turn, and the
 %many terabits of data can be shuffled without the use of a single
 %network switch.  
+
+
 The \mbe\ will sit in a shielded, air-conditioned shipping container,
 and all hardware will be installed, integrated, and tested at McGill
 before being shipped to the HIRAX site.  The highly modular nature
@@ -869,7 +897,7 @@ Lacy (NRC) has built two half-scale prototypes, and has verified their
 surface accuracy to have an RMS of 350$\mu$m.  A full scale
 production-quality mold is nearing completion in South Africa, with a
 measured surface RMS of 800$\mu$m, less than 0.3\% of a wavelength.
-The half-scale prototype and production mold are shown in Figure
+A half-scale prototype dish and the production mold are shown in Figure
 \ref{fig:hirax_dishes}. 
 %  A second route is laser-cut
 %metal dishes, with wire mesh attached to ribs. A full scale prototype
@@ -1117,7 +1145,7 @@ The RF-shielded enclosure,
 %not stay in the country, 
 %charged on the \mbe.  
 The power in South Africa from the mains is not
-clean, with frequent voltage sags, and power losses.  To keep the \mbe
+clean, with frequent voltage sags, and power losses.  To keep the \mbe\
 (along with the rest of HIRAX) working, we will need a diesel rotary
 uninterruptable power supply (DRUPS).  SARAO has investigated the
 matter carefully, and found these to be the most cost-effective
@@ -1126,7 +1154,8 @@ will be about \$376,000 CAD (buget item 10), with UKZN purchasing this as an in-
 contribution and McGill to retain ownership at the completion of
 HIRAX.  We note that the DRUPS is overpowered for just the needs of the
 \mbe\, but future deployments will also need to power the radio
-receivers and the X-engine, and so the full power of the DRUPS will be used.
+receivers and the X-engine, and so the full power of the DRUPS will be
+used. 
 
 Specialized lab and field RF test equipment will be \$222,900 CAD
 (budget item 1).  The test equipment will stay housed at McGill,
@@ -1439,10 +1468,10 @@ other institutions in Canada and across the world.
 %Ada will share with us quebec strategy, so we can align.  
 
 
-\bibliographystyle{apj}
+%\bibliographystyle{apj}
+\bibliographystyle{abbrv}
+\begin{small}
 \bibliography{cfi_jelf_sievers}{}
-
-
+\end{small}
 %total - 1112+153+376+214+42+33*5
-
 \end{document}
