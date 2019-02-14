@@ -776,19 +776,21 @@ less power (1.5 kW per crate).  By decoupling the F from the X part of
 the back-end, the \mbe\ will remain a powerful tool for many years to
 come, and can be connected to multiple telescopes and multiple GPU
 engines over its useful life.  This explains why the \mbe\ can be
-deployed to South Africa for HIRAX and then redeployed to northern
-Canada with a new, by then much-cheaper and lower power, GPU engine.
+deployed to South Africa for HIRAX for 4-5 years, and then redeployed
+to northern Canada with a new, by then much-cheaper and lower power,
+GPU engine.
 
 \subsection{HIRAX Deployment Plan and Status}
 
 HIRAX will be one of the largest radio telescopes in the world.
-Hence, we are planning a staged rollout.  In 2017, we built an
-8-element prototype at the Hartebeesthoek Radio Astronomy Observatory
+Hence, we are planning a staged rollout.  In 2017, Chiang led the
+construction of an 8-element prototype at the Hartebeesthoek Radio Astronomy Observatory
 (HartRAO) outside of Johannesburg, South Africa.  The prototype has
 been invaluable in testing dishes and front end components, and in
 gaining experience with back-end components.  The 8-element prototype
 and its first-light data are shown in Figure \ref{fig:hirax8}.  It
-uses one of the same McGill-developed boards that will go into the \mbe.
+uses one of the same McGill-developed boards that will go into the
+requested \mbe.
 %  The next
 %phase will be to build a second prototype on the Radio-frequency
 %interference (RFI) protected site of the future Square Kilometre Array
@@ -813,8 +815,10 @@ combined.  The \mbe\ as proposed will support the full
 HIRAX-512. After a year of observing with HIRAX-512, funding
 permitting, we will begin on HIRAX-1024.  We will survey the entire
 southern sky visible to HIRAX, which we expect will take approximately
-4 years.  As part of our site agreement, SARAO will provide access to
-power and data connections for HIRAX.  As part of the HIRAX
+four years.  As part of our site agreement, SARAO will provide access to
+power and data connections for HIRAX at least through the commencement
+of Square Kilometre Array (SKA) operations, which will give HIRAX time to
+complete the four year survey.  As part of the HIRAX
 installation, the University of KwaZulu-Natal will purchase and
 install a diesel rotary uninterruptible power supply (DRUPS)
 sufficient to power the full array.  At the completion of HIRAX
@@ -930,11 +934,11 @@ rates are volatile) from the South African National Research
 Foundation (NRF) and the University of KwaZulu-Natal for hardware
 funding, along with significant funding for graduate students and
 postdocs.  The current commitments are enough to build and install 128
-dishes, and expected future funding from the NRF will push that to the
-512 dish stage, sufficient to utilize the \mbe's full capability.  We
-stress that expanding the \mbe\ to handle HIRAX-1024 simply requires
-buying more ICE board crates and installing them in the RF-shielded
-container.
+dishes, and expected future funding from the NRF plus the CFI-funded
+\mbe\ will push that to the 512 dish stage, sufficient to utilize the
+\mbe's full capability.  We stress that expanding the \mbe\ to handle
+HIRAX-1024 simply requires buying more ICE board crates and installing
+them in the RF-shielded container.
 
 %\subsection{Complementarity With CHIME} HIRAX follows on the groundbreaking
 %work carried out by the CHIME team, while being complementary in many
@@ -1135,7 +1139,7 @@ cost \$1,081,037 (budget item 9).
 The RF-shielded enclosure,
 %(\$72,000 CAD)
  air-conditioned shipping container, and shipping to/from the South
- African HIRAX site will be \$112,300 CAD (budget item 7).  The
+ African HIRAX site will be \$125,708 CAD (budget item 7).  The
  container will be housed in a parking lot at McGill while the
  \mbe\ is being installed and tested, before field deployments.
 % (includingtax on the Canadian-acquired components).  
@@ -1150,20 +1154,23 @@ clean, with frequent voltage sags, and power losses.  To keep the \mbe\
 uninterruptable power supply (DRUPS).  SARAO has investigated the
 matter carefully, and found these to be the most cost-effective
 solution given the quality of the electricity supply.  That cost
-will be about \$376,000 CAD (buget item 10), with UKZN purchasing this as an in-kind
+will be about \$387,697 CAD (buget item 10), with UKZN purchasing this as an in-kind
 contribution and McGill to retain ownership at the completion of
 HIRAX.  We note that the DRUPS is overpowered for just the needs of the
 \mbe\, but future deployments will also need to power the radio
 receivers and the X-engine, and so the full power of the DRUPS will be
-used. 
+used.  Future Canadian deployments of the \mbe\ will need some form of
+uninterruptible power supply, and so our baseline plan is to bring the
+DRUPS back to Canada with the \mbe.  However we will revisit this as
+future plans take shape.
 
-Specialized lab and field RF test equipment will be \$222,900 CAD
-(budget item 1).  The test equipment will stay housed at McGill,
+Specialized lab and field RF test equipment will be \$202,909 CAD
+(budget item 2).  The test equipment will stay housed at McGill,
 modulo portable units brought into the field for short tests.
 %including tax, 
 Specialized lab RF components including assortments
-of amplifiers, filters, bias tees, FPGA boards etc. will be \$48,200
-(buget item 3).
+of amplifiers, filters, bias tees, FPGA boards etc. will be \$48,209
+(buget item 4).
 Based on experience building stand-alone antennas on Marion, the cost
 per site-testing antenna, split roughly evenly
 between mini shipping containers to move the equipment (and
@@ -1171,14 +1178,14 @@ environmentally protect the electronics once on site), FPGA boards to
 process the data, batteries to work off-grid, solar panels and
 RF-quiet charge controllers, the antennas and associated RF hardware
 themselves, and miscellaneous computers/drives/custom RF-tight
-enclosures is \$24,330  per station.  With three stations, needed to
+enclosures is \$24,335  per station.  With three stations, needed to
 test sites long enough to truly understand their RFI environments, the total
-cost will be \$73,000 (budget item 5).
+cost will be \$73,006 (budget item 6).
 %.  With exchange rate and tax, this works out to \$33,000
 %CAD per station, and we intend to deploy 3 stations to test a variety
 %of sites long enough to truly understand their RFI environment.  This
 %gives a total budget of \$99,000 for the base stations.  
-The total request, including tax and matching contributions, is then \$1,996,000
+The total request, including tax and matching contributions, is then \$1,918,566
 CAD.  Matching will come from vendors (RF equipment supplier Keysight
 has agreed to CFI matching) and from South African contributions.  
 
@@ -1204,7 +1211,7 @@ The South African Radio Astronomy Observatory has agreed to host the
 core HIRAX site, including the \mbe.  As part of the site agreement,
 SARAO has committed to providing access to power and data connections
 for HIRAX.  The transmission line supplying power to HIRAX also
-supplies the SKA site, and is near capacity, so the SARAO commitment
+supplies the Square Kilometre Array (SKA) site, and is near capacity, so the SARAO commitment
 to provide access to power is essential.  The University of
 KwaZulu-Natal (UKZN) has committed to site preparations and
 backstopping the power installation costs, which will include power
