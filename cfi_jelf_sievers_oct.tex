@@ -1,4 +1,5 @@
-\documentclass[letterpaper,11pt,preprint]{aastex}
+%\documentclass[letterpaper,11pt,preprint]{aastex}
+\documentclass[11]{article}
 \usepackage{graphics,graphicx}
 \usepackage{natbib}
 \usepackage{color}
@@ -21,6 +22,28 @@
 % HCC's SPACE SAVING MAGIC FOR THE WINZ
 \setlength{\parskip}{0.07in}
 \setlength{\bibsep}{0.05in}
+
+%\newcommand\mnras{\ref@jnl{MNRAS}}%
+%\newcommand\nat{\ref@jnl{Nature}}
+%\newcommand\apj{\ref@jnl{ApJ}}%
+%\newcommand\jcap{\ref@jnl{J. Cosmology Astropart. Phys.}}%
+%\newcommand\apjl{\ref@jnl{ApJ}}%
+%\newcommand\procspie{\ref@jnl{Proc.~SPIE}}%
+%\newcommand\aap{\ref@jnl{A\&A}}
+%\newcommand\prd{\ref@jnl{Phys.~Rev.~D}}%
+%\newcommand\aj{\ref@jnl{AJ}}%
+
+\newcommand\mnras{{MNRAS}}%
+\newcommand\nat{{Nature}}
+\newcommand\apj{{ApJ}}%
+\newcommand\jcap{{J. Cosmology Astropart. Phys.}}%
+\newcommand\apjl{{ApJ}}%
+\newcommand\procspie{{Proc.~SPIE}}%
+\newcommand\aap{{A\&A}}
+\newcommand\prd{{Phys.~Rev.~D}}%
+\newcommand\aj{{AJ}}%
+
+
 
 \makeatletter
 \newcommand{\mbe}{{\rm MBE}}
@@ -46,7 +69,7 @@ plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 %\chead{Sievers \& Chiang}
 \rhead{Project \# 38558}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand*{\bibfont}{\tiny}
+%\renewcommand*{\bibfont}{\tiny}
 %\usepackage{multicol}
 %\usepackage{etoolbox}
 %\patchcmd{\thebibliography}{\section*{\refname}}
@@ -61,7 +84,7 @@ plus 1ex} {.2ex plus .2ex}{\subsize\bf}}
 
 %\pagestyle{plain}
 \pagenumbering{gobble}
-\singlespace
+%\singlespace %xxx testing no aastex
 
 %\section{Introduction}
 
@@ -1106,15 +1129,22 @@ in the world, trailing only CHIME\footnote{the total number of signals
 
 Since the hardware will be essentially identical to the F-engine build
 by Matt Dobbs for CHIME, we have a very good indication of its cost.
-The ICE boards, digitizers, and custom backplanes, with spares, will
-cost \$1,081,037 (budget item 9).
+The ICE boards, digitizers, and custom backplanes, with development
+kit (which can also be used as spares in case of field failures), will
+cost \$1,081,037 (budget item 9).  The \mbe\ uses 64 ICE boards with
+sub-groups of 16, so a total of 80 ICE boards will let us field the
+\mbe\ while having the minimum 16 boards in the lab needed to
+test new firmware without interrupting science operations. 
 %\$729,600 USD, at a conservative exchange rate of 0.7, with an
 %effective tax rate of 5\%, plus the cost of racks/power supplies to
 %run the \mbe, totals for \$1,112,000 CAD.  
 The RF-shielded enclosure,
 %(\$72,000 CAD)
  air-conditioned shipping container, and shipping to/from the South
- African HIRAX site will be \$125,708 CAD (budget item 7).  The
+ African HIRAX site will be \$125,708 CAD (budget item 7).  The cost
+ is dominated by the custom RF shielding built into the container.
+ Without the RF shielding, HIRAX will be blinded by radio emission
+ from the \mbe.  The
  container will be housed in a parking lot at McGill while the
  \mbe\ is being installed and tested, before field deployments.
 % (includingtax on the Canadian-acquired components).  
@@ -1356,9 +1386,9 @@ multiple countries will foster the growth of a racially- and
 gender-diverse cohort.  PI and co-PI Sievers and Chiang already have
 an exceptionally strong track record in bringing together HQP from a
 wide range of backgrounds.  Since starting as permanent faculty in
-2013, they have trained a combined total of 26 HQP representing eleven
-different countries (Botswana, Chile, DRC, Ethiopia, Ghana, India,
-Kenya, South Africa, Turkey, USA, Chile), including several students
+2013, they have trained a combined total of 26 HQP representing thirteen
+different countries (Botswana, Brazil, Cameroon, Canada, Chile, DRC, Ethiopia, Ghana, India,
+Kenya, South Africa, Turkey, USA), including several students
 from historically disadvantaged backgrounds.  The acquisition of the
 \mbe\ will enable continued training of HQP with each PI supervising
 5-6 HQP on average during the duration of the project through direct
@@ -1469,9 +1499,9 @@ other institutions in Canada and across the world.
 
 %\bibliographystyle{apj}
 %\bibliographystyle{abbrv}
-\bibliographystyle{abbrvnat}
-\begin{small}
+%\bibliographystyle{abbrvnat} - this was latest, JLS
+%\begin{small}
 \bibliography{cfi_jelf_sievers}{}
-\end{small}
+%\end{small}
 %total - 1112+153+376+214+42+33*5
 \end{document}
