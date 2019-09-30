@@ -334,13 +334,13 @@ surveys such as eBOSS in the 100-200 range \citep{Zhao2016}.
   carried out by the CHIME team, while being complementary and
   standing apart in several important ways.  First, among these
   experiments, HIRAX is the frontrunner in terms of collecting area,
-  with 512 dishes improving over CHIME by nearly a factor of 2 (and 
-  1024 dishes by more than 3.5).  HIRAX is also
-  located in the southern hemisphere (CHIME and Tianlai are both in
-  the north) so CHIME and HIRAX data provide independent measurements 
-  of dark energy that can be combined for improved precision.  HIRAX's southern
-  location also lets it observe the Galactic center, which yields
-  an advantage in searching for new pulsars.  The HIRAX site is
+  with 512 dishes improving over CHIME by nearly a factor of two (and
+  a factor of 3.5 with 1024 dishes).  HIRAX is also located in the
+  southern hemisphere (CHIME and Tianlai are both in the north), and
+  independent measurements from both hemispheres can be combined for
+  improved precision on dark energy constraints.  HIRAX's southern
+  location also enables observations of the Galactic center, which
+  yields an advantage in searching for new pulsars.  The HIRAX site is
   significantly more radio-quiet than the CHIME site, and it will
   remain so as an area protected by the South African government for
   radio astronomy research.  Finally, the contrasting instrumental
@@ -849,51 +849,15 @@ and the \mbe\ will return to Canada for our next observing program
 %}
 %\end{figure}
 
-Much of the development work for HIRAX has been completed, with the
-main challenge lying in the scaling to hundreds of dishes.  The
-technology for the \mbe\ was developed for CHIME \citep{Bandura16},
-and works in the field.  Similarly, the GPU correlator
-\citep{Recnik15} works at scale in the field as well, with
-      {\color{red} CHIME having discovered 13 FRBs \citep{chime_frbs}
-        --- NEED TO UPDATE THIS}.  Custom feeds have been designed and
-      built, and we continue to iterate to improve their noise
-      performance.
-%  The signals from the telescopes will be sent
-%via optical fiber to the back-end, in a procedure called radio
-%frequency over fiber (RFoF).  Prototype RFoF transmit and receive
-%boards have been demonstrated in the field at HartRAO, and the first
-%production-scale order has been received and is undergoing testing.
-%The main outstanding hardware development is the construction of the
-%6m dishes.  
-We have used low-cost ($\sim$800 USD) commercial off-the-shelf dishes at HartRAO, but
-their optical design is not ideal for HIRAX (we require dishes with a
-focal ratio of $f=0.25$, which shields the feeds and reduces crosstalk
-between nearby antennas, key for a clean cosmological measurement),
-and the manufacturing quality is rather poor.  Consequently, we have
-been working with Canadian and South African partners to develop
-suitable dishes.  The leading option is a composite dish with a reflective
-wire mesh embedded in fiberglass.  Canadian HIRAX collaborator Gordon
-Lacy (NRC) has built two half-scale prototypes, and has verified their
-surface accuracy to have an RMS of 350$\mu$m.  A full scale
-production-quality mold is nearing completion in South Africa, with a
-measured surface RMS of 800$\mu$m, less than 0.3\% of a wavelength.
-A half-scale prototype dish and the production mold are shown in Figure
-\ref{fig:hirax_dishes}. 
-%  A second route is laser-cut
-%metal dishes, with wire mesh attached to ribs. A full scale prototype
-%has been completed, with a second ordered to compare repeatability.
-%Samples of the dish prototypes are shown in Figure
-%\ref{fig:hirax_dishes}.  We plan to verify the prototypes and make a
-%final dish selection by the end of 2018.
-
-\begin{figure}[tbh]
+\begin{figure}[t]
   \includegraphics[height=2.5in]{3m_dish.jpg}
 %  \includegraphics[height=2.5in]{rebcon_dish.png}
   \includegraphics[height=2.5in]{mms_mold.jpg}
 \caption{\small Left:  Canadian designed and built half-size composite
-  HIRAX dish prototype (photo credit: Gordon Lacy, NRC).  For a few
-  hundred dollar dish, the surface accuracy is outstanding, with an
-  RMS of 350$\mu$m.  Right: production mold in South Africa, with a
+  HIRAX dish prototype (photo credit: Gordon Lacy, NRC).
+  %For a few hundred dollar dish, the surface accuracy is outstanding,
+  %with an RMS of 350$\mu$m.
+  Right: production mold in South Africa, with a
   surface RMS of 800$\mu$m.
 %Full-scale composite molds are currently being
 %  manufactured in South Africa.  Right:  Full-sized metal prototype,
@@ -903,56 +867,112 @@ A half-scale prototype dish and the production mold are shown in Figure
 }
 \end{figure}
 
+Much of the development work for HIRAX has been completed, with the
+main challenge lying in the scaling to hundreds of dishes.  The
+technology for the \mbe\ was developed for CHIME \citep{Bandura16},
+and works in the field.  Similarly, the GPU correlator
+\citep{Recnik15} works at scale {\color{red}and has been successfully
+  proven by CHIME, which recently published new 13~FRBs
+  \citep{chime_frbs} and has many other detections that are currently
+  being analyzed}.  Custom feeds have been designed and built, and we
+continue to iterate to improve their noise performance.
+%  The signals from the telescopes will be sent
+%via optical fiber to the back-end, in a procedure called radio
+%frequency over fiber (RFoF).  Prototype RFoF transmit and receive
+%boards have been demonstrated in the field at HartRAO, and the first
+%production-scale order has been received and is undergoing testing.
+%The main outstanding hardware development is the construction of the
+%6m dishes.  
+We have used low-cost ($\sim$800 USD) commercial off-the-shelf dishes
+at HartRAO, but their optical design is not ideal for HIRAX (we
+require dishes with a focal ratio of $f=0.25$, which shields the feeds
+and reduces crosstalk between nearby antennas, key for a clean
+cosmological measurement), and the manufacturing quality is rather
+poor.  Consequently, we have been working with Canadian and South
+African partners to develop suitable dishes.  {\color{red}One of the
+  leading options is a composite dish with a reflective metal mesh
+  embedded in fiberglass, and the design has been led by Gordon Lacy
+  at the NRC.  Two half-scale prototypes have been constructed, and
+  the measured surface accuracy is 350$\mu$m RMS.  A full scale
+  production-quality mold has been fabricated in South Africa, with a
+  measured surface RMS of 800$\mu$m, less than 0.3\% of a wavelength.}
+A half-scale prototype dish and the production mold are shown in
+Figure \ref{fig:hirax_dishes}.
+%  A second route is laser-cut
+%metal dishes, with wire mesh attached to ribs. A full scale prototype
+%has been completed, with a second ordered to compare repeatability.
+%Samples of the dish prototypes are shown in Figure
+%\ref{fig:hirax_dishes}.  We plan to verify the prototypes and make a
+%final dish selection by the end of 2018.
 
-HIRAX has already received a total commitment of 20,000,000 South
-African Rand (about \$2,000,000 Canadian dollars, though exchange
-rates are volatile) from the South African National Research
-Foundation (NRF) and the University of KwaZulu-Natal for hardware
-funding, along with significant funding for graduate students and
-postdocs.  The current commitments are enough to build and install 128
-dishes, and expected future funding from the NRF plus the CFI-funded
-\mbe\ will push that to the 512 dish stage, sufficient to utilize the
-\mbe's full capability.  We stress that expanding the \mbe\ to handle
-HIRAX-1024 simply requires buying more ICE board crates and installing
-them in the RF-shielded container.
+{\color{red}NEED TO UPDATE THIS PARAGRAPH WITH SRE FUNDING---HIRAX has
+  already received a total commitment of 20,000,000 South African Rand
+  (about \$2,000,000 Canadian dollars, though exchange rates are
+  volatile) from the South African National Research Foundation (NRF)
+  and the University of KwaZulu-Natal for hardware funding, along with
+  significant funding for graduate students and postdocs.  The current
+  commitments are enough to build and install 128 dishes, and expected
+  future funding from the NRF plus the CFI-funded \mbe\ will push that
+  to the 512 dish stage, sufficient to utilize the \mbe's full
+  capability.  We stress that expanding the \mbe\ to handle HIRAX-1024
+  simply requires buying more ICE board crates and installing them in
+  the RF-shielded container.}
 
 \subsection{RF Lab and Antenna Development}
-The redshifted hydrogen line can be used in cosmology in many more
-ways than just studies of dark energy.  It is amongst the most
-powerful tools we have to look back in time at the birth of the first
-stars.  For instance, if confirmed, the EDGES detection of a
-stronger-than-expected absorption trough at 78 MHz from ``cosmic
-dawn''\citep{Bowman2018} would radically reshape our view of the early
-universe.  The maximum expected signal is set by simple physics, and so
-factor of $\sim$2 stronger signal they found would indicate we are
-missing a major piece in the story of the universe, and possibly of
-new fundamental physics, such as early dark matter-baryon interactions
-\citep{Barkana2018}.  While we do not propose here for deployments of
-the \mbe\ past the first one, we do wish to lay the groundwork for
-future low-frequency work.  The challenges associated with RFI at
-lower frequencies are even more intense, with FM radio in particular
-blinding most telescopes to a critical time in the universe's history.
-Site selection is a major factor, with places far from civilization
-and sheltered from radio transmissions ideal.  With its sparse
-population but good infrastructure, northern Canada is particularly
-attractive for low-frequency work.  We have deployed small radio
-antennas to remote locations, including possibly the most remote radio
-telescope in the world \citep{PRIZM}.  It is located on Marion Island,
-halfway between South Africa and Antarctica, 2000 km from the closest
-permanent inhabitants.  This proposal will enable the development of a
-radio lab that we will use to build and test more self-contained
-antennas.  Chiang will lead site testing at promising locations we
-will undertake to identify.
 
-To carry out this work, Chiang will develop a new radio
-instrumentation lab at McGill.  The lab will first and foremost have
-the test equipment necessary to verify the performance and integration
-of the \mbe.  It will also be used to build and test the test antenna
-systems to be deployed in the Canadian north.  The lab will house the
-sensitive benchtop RF test equipment (such as vector network
-analyzers) needed for these roles, plus serve as home base to portable
-RF test equipment that can verify system performance in the field.
+{\color{red} In order to integrate the \mbe\ and verify its
+  performance, we propose to establish a new radio instrumentation lab
+  at McGill, led by Chiang.  This lab will house a comprehensive suite
+  of test equipment that is critical for troubleshooting
+  \mbe\ subsystems and for demonstrating successful end-to-end
+  functionality.  The major required equipment items include vector
+  network analyzers (one 9-GHz benchtop unit to span the full
+  operational range of the ICE boards, and 6.5-GHz and 4-GHz portable
+  units for field testing), a 3-GHz spectrum analyzer, a 6-GHz signal
+  generator, 70-MHz oscilloscope, DC power supplies, LCR meter, and
+  precision 6.5-digit digital multimeter.
 
+  Because the redshifted hydrogen line is such a powerful and
+  versatile tool for cosmology, the new radio instrumentation lab will
+  have tremendous added value beyond the initial \mbe\ development and
+  deployment.  As just one example, in addition to enabling studies of
+  dark energy, the hydrogen line is also one of the most powerful
+  methods of probing the birth of the first stars.  A first detection
+  of this period of ``cosmic dawn'' was recently reported by the EDGES
+  experiment~\citep{Bowman2018}; however, the observed absorption
+  trough at 78~MHz was about {\it twice} the expected ampliutde.  If
+  confirmed by other experiments, this excess signal could point to a
+  major missing piece in the story of the universe, including possible
+  new fundamental physics such as early dark matter-baryon
+  interactions~\citep{Barkana2018}.  Although we are not proposing for
+  multiple \mbe\ deployments at this time, the integrated
+  \mbe\ coupled with the new radio instrumentation lab will lay the
+  groundwork for a wide range of future work, including low-frequency
+  observations of cosmic dawn.
+
+  In parallel with \mbe\ integration, the radio instrumentation lab
+  will also support the development of novel, self-contained antenna
+  stations that will be deployed in the Canadian north.  One of the
+  greatest challenges assocated with low-frequency measurements is
+  RFI, with FM radio in particular blinding telescopes in most
+  locations.  In order to access frequencies associated with cosmic
+  dawn and earlier, it is crucial to have a radio-quiet observation
+  site that is far from civilization and sheltered from
+  human-generated transmission.  With its sparse population but well
+  developed infrastructure, {\it northern Canada presents a unique
+    geographic advantage for low-frequency work}.  Chiang has already
+  led an initial site survey on Axel Heiberg island in Nunavut, and
+  the preliminary results suggest that the RFI environment is
+  outstanding, with no persistent contamination in the FM band.  The
+  radio instrumentation lab supported by this proposal will enable the
+  development of low-frequency antenna stations that will be installed
+  in northern Canada, taking full advantage of the clean observing
+  conditions.  The lab will also enable continued surveying efforts to
+  identify other radio-quiet sites in Canada.}
+% We have already deployed small radio antennas to one of the most
+% remote locations in the world, Marion Island~\citep{PRIZM}, which
+% lies halfway between South Africa and Antarctica, 2000~km from the
+% closest permanent inhabitants.
 
 \section{Researchers}
 
@@ -1025,10 +1045,13 @@ supply the hardware and firmware for the \mbe.  Other key Canadian
 collaborators include Keith Vanderlinde (Toronto) who built the CHIME
 GPU-engine, and Kendrick Smith (Perimeter Institute) who enhanced the
 algorithms in \citet{Masui15} and developed the FRB search pipeline
-successfully used by CHIME. Gordon Lacy (NRC) has demonstrated success
-with half-scale prototype dishes using inexpensive materials, and
-shown the half-scale prototype surface accuracy is a third of a
-millimetre.  Tzu-Ching Chang (JPL) led the first successful intensity
+successfully used by CHIME.
+% HCC: need to remove Gordon as a ``HIRAX collaborator?''
+% Gordon Lacy (NRC) has demonstrated success
+% with half-scale prototype dishes using inexpensive materials, and
+% shown the half-scale prototype surface accuracy is a third of a
+% millimetre.
+Tzu-Ching Chang (JPL) led the first successful intensity
 mapping detection \citep{Chang10} and her group contains experts in
 electromagnetic simulations modelling HIRAX hardware.  Jeff Peterson
 (Carnegie-Melon) and Kevin Bandura (West Virginia University) have
@@ -1056,19 +1079,19 @@ many different sites carrying out many different projects over its
 life.  The \mbe\ is a major component of HIRAX and is {\it essential}
 for the operation of the experiment.  The innovative and portable
 \mbe\ platform will make it a game-changing contribution to the radio
-telescope search for dark energy and FRBs, and will strengthen Canada's
-leading role in the international cosmology community.
-By number of input signals, the \mbe\ will be
-the second-largest F-engine in the world, trailing only
-CHIME\footnote{the total number of signals coming from the ASKAP, the
-  Australian SKA Pathfinder, is also larger, but they are split into
-  several independent groups which are not processed together}.  HIRAX
-will begin construction late this year, with the 512-element stage
-starting late 2020, and so it is on the same timescale as the \mbe.
-Crucially, there will be an array of radio telescopes to feed the
-\mbe.  While the full HIRAX array is not yet funded, we are actively
-proposing, and are confident we will be able to use the full capacity
-of the \mbe.
+telescope search for dark energy and FRBs, and will strengthen
+Canada's leading role in the international cosmology community.  By
+number of input signals, the \mbe\ will be the second-largest F-engine
+in the world, trailing only CHIME\footnote{the total number of signals
+  coming from the ASKAP, the Australian SKA Pathfinder, is also
+  larger, but they are split into several independent groups which are
+  not processed together}.  {\color{red}NEED TO UPDATE
+  TIMELINE---HIRAX will begin construction in 2019, with the
+  512-element stage starting late 2020, and so it is on the same
+  timescale as the \mbe.  Crucially, there will be an array of radio
+  telescopes to feed the \mbe.  While the full HIRAX array is not yet
+  funded, we are actively proposing, and are confident we will be able
+  to use the full capacity of the \mbe.}
 %xxx
 
 Since the hardware will be essentially identical to the F-engine build
