@@ -5,6 +5,8 @@
 \usepackage{color}
 \usepackage{times}
 \citestyle{aas}
+\usepackage{setspace}
+\setlength{\bibsep}{0.0pt}
 
 \setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
 \setlength{\topmargin}{-0.0625in} \setlength{\oddsidemargin}{0in}
@@ -201,8 +203,8 @@ the cosmological constant be precisely zero.  However, as cosmologists
 probed further and further into the universe, things began not quite
 adding up.  In the 80's and 90's, studies of how distant galaxies
 clumped together indicated that large-scale structures weren't growing
-as expected.  In a universe with only matter in it ({\textit{e.g.}
-  \citet{Park94}}.  Then in the late '90's, two separate groups
+as expected in a universe with only matter in it ({\textit{e.g.}
+  \citet{Park94}}).  Then in the late '90's, two separate groups
 announced that distant supernovae were fainter than expected when
 compared to nearby ones \citep{Riess98,Perlmutter99} in work that
 would lead to the 2011 Nobel prize in physics.  Their data were
@@ -232,8 +234,11 @@ calling the vacuum contribution ``dark energy,'' with the cosmological
 constant but one of many possible models \citep{Ratra88,Steinhardt99}.
 It {\textit{may}} turn out that a cosmological constant is a good
 description, but it may well not.  If cosmologists were to find that
-the vacuum energy changes with time, it would radically reshape our
-view of the universe and point to profoundly new fundamental physics.
+the vacuum energy changes with time, {\color{blue} it would point to
+  profoundly new fundamental physics, radically reshaping our
+  understanding of the very nature of space and time.}
+%it would radically reshape our
+%view of the universe and the very nature of space and time and point to profoundly new fundamental physics.
 So far, the data we have in-hand are broadly consistent with constant
 dark energy, within rather large errors.  However, it is of the utmost
 importance to probe that by pushing to higher sensitivity and earlier
@@ -336,7 +341,7 @@ so we need a very sensitive telescope.  However, because the signal is
 on large (degree) scales, we do not need very high resolution.  These
 facts set the HIRAX design of $\sim$ 1000 close-packed 6m-diameter
 dishes.  The HIRAX collaboration will build the experiment in stages,
-starting with a 128-dish pathfinder, followed by 512, and finally a
+starting with a 128-dish pathfinder, followed by {\color{blue}256}, 512, and finally a
 full array of 1024 dishes.  Even with only 512 dishes, HIRAX will
 provide improved constraints on the evolution of dark energy in
 comparison to current measurements from all of cosmology (see Figure
@@ -595,18 +600,18 @@ surveys such as eBOSS in the 100-200 range \citep{Zhao2016}.
 Fast radio bursts (FRBs) are some of the most enigmatic objects in the
 universe.  The first one was discovered by \citet{Lorimer07} in 2007,
 just a decade ago.  As far as we know, they flash once, brightly, for
-a thousandth of a second, and are generally never seen again (only two
-FRBs have been seen to repeat).  While we know virtually nothing about
-what FRBs are, they almost certainly arise from well outside the Milky
+a thousandth of a second, and are generally never seen again (only
+about 10 FRBs have been seen to repeat).  While we know virtually nothing about
+what FRBs are, they seem arise from well outside the Milky
 Way.  While theories abound, what truly gives rise to these flashes
 bright enough to be seen from across the universe is a mystery.  While
 we expect several thousand visible FRBs per day, the small fields of
-view of current telescopes means that since their discovery, only
-around 60 have been discovered, so their properties are not well
+view of current telescopes means that since their discovery, fewer
+than 100 have been published, so their properties are not well
 understood. Sievers' research has become increasingly focused on
 FRBs, including how to find them \citep{Masui15}, possible origins of
 FRBs \citep{Connor2016}, and how we can use them as a new probe of
-cosmology \citep{Madhavacheril18}.
+cosmology \citep{Madhavacheril18,Walters2019}.
 
 While HIRAX was designed to study dark energy, it is also a nearly
 ideal instrument to find FRBs.  With 6m dishes operating between 400
@@ -623,7 +628,10 @@ expect to find nearly as many FRBs {\textit{every few days}} as have
 been reported in total to-date.  While the rate in the HIRAX band is
 still uncertain, with a rough value of 10-25 per day, CHIME has
 recently reported FRB detections \citep{CHIME_ATEL,chime_frbs} ruling
-out pessimistic estimates.
+out pessimistic estimates\footnote{CHIME has unofficially shown
+  hundreds of detections, placing the event rate towards the
+  optimistic side.  As of submission, however, these detections have not
+  been published.}.
 
 While a critical step to understanding what FRBs are is finding more,
 an equally important step is to get accurate positions for them.  With
@@ -631,13 +639,16 @@ sufficiently accurate positions, extragalactic FRBs can be tied to a
 host galaxy.  With a host galaxy, one can measure a redshift, and hence
 a distance, to the FRB.  With a distance, one can finally infer an
 energy scale for the bursts.  So far, despite extensive searches, only
-two FRBs have been seen to repeat.  Knowing where to look, astronomers
+a handful of FRBs have been seen to repeat.  Knowing where to look, astronomers
 have pinpointed the location of the first repeating FRB to a dwarf
 galaxy roughly 2.5 billion light years away ($z=0.19$).  Hundreds of
 bursts have now been seen from that repeater, so we fundamentally do
-not know if it is even typical of the FRB population.  {\textit{No
-    non-repeating FRB has yet to be localized.}}  When coupled with
-outrigger stations the collaboration is building across southern
+not know if it is even typical of the FRB population.  Recently, the
+first two non-repeating FRBs have been localized
+\citep{Bannister2019,Ravi2019} and the host galaxy and absorption
+properties are totally different from that of the localized repeater.
+These detections have only served to deepend the mystery of FRBs.
+ When coupled with outrigger stations the collaboration is building across southern
 Africa (and for which funding has already been secured), HIRAX will
 change the field.  With a total of several dozen inexpensive dishes at
 a handful of sites working together with the core array powered by the
@@ -667,7 +678,9 @@ physics, including placing limits on the photon mass
 \citep{frb_equivalence}.  Sievers and collaborators have also shown
 that FRBs can also be used to probe the kinetic Sunyaev-Zeldovich
 effect, breaking the velocity-optical depth degeneracy in
-next-generation CMB observations \citep{Madhavacheril18}.
+next-generation CMB observations \citep{Madhavacheril18} and in
+measuring the evolution of the gas fraction in the universe
+\citep{Walters2019}.  
 
 \subsection{Radio Telescopes and the \mbe}
 
@@ -737,7 +750,7 @@ will require combining the electric fields from the outriggers with
 those measured by the \mbe.  Continuously streaming electric field
 data even from a small number of outriggers is prohibitive---for
 instance, moving the raw data from an 8-dish station in Botswana would
-exceed the entire countries international internet bandwidth.
+exceed the entire country's international internet bandwidth.
 Instead, the last 1-2 minutes of raw data from the \mbe\ will be
 cached in RAM (probably by the GPU nodes in the X-engine).  When HIRAX
 detects an FRB, the raw data will be saved to disk, and the outriggers
@@ -778,8 +791,9 @@ on short timescales.  For instance, NVidia has improved the on-paper
 performance on 4-bit matrix multiplies, the core of what the GPUs do,
 by a factor of $\sim$50 in about two years.  A single consumer-grade
 board now has a theoretical performance of over 400 teraops for 4-bit
-matrix multiplies.  In other words, the correlator one would design
-today is radically different from the one CHIME deployed last year.
+matrix multiplication.  In other words, the correlator one would design
+today is radically different from the one CHIME deployed just two
+years ago.
 Conversely, the digitizing, channelizing, and corner-turning
 operations that the \mbe\ will carry out evolve much more slowly, and
 use much less power (1.5 kW per crate).  By decoupling the F from the
@@ -788,7 +802,13 @@ years to come, and can be connected to multiple telescopes and
 multiple GPU engines over its useful life.  This explains why the
 \mbe\ can be deployed to South Africa for HIRAX for 4-5 years, and
 then redeployed to northern Canada with a new, by then much-cheaper
-and lower power, GPU engine.
+and lower power, GPU engine.  {\color{blue}The \mbe\ will also have
+  flexibility in what frequencies it observes, and hence what science
+  it can pursue.  By selecting suitable (and inexpensive) analog RF
+  filters, the \mbe\ can observe {\textit{any}} 400 MHz frequency chunk
+  up to a maximum of 5 GHz.  With analog splitters, it can also be configured
+  to handle fewer telescopes over a broader frequency range,
+  {\textit{e.g.}} 512 inputs from 400 MHz to 1.2 GHz.}
 
 \subsection{HIRAX Deployment Plan and Status}
 
@@ -811,7 +831,8 @@ HIRAX 400--800~MHz band (see right panel of Figure
   2020.}  With 128 elements, we can save all the raw visibility data
 from the array, and finalize and verify the data
 calibration/compression pipeline. After many months of observations
-with HIRAX-128, we will start construction of a 512-element version.
+with HIRAX-128, we will start construction of a {\color{blue}
+  256-element version followed by a} 512-element version.
 HIRAX-512 will be an extremely powerful radio telescope in its own
 right, with limits on dark energy comparable to our current knowledge
 from all cosmological data combined.  The \mbe\ as proposed will
@@ -821,8 +842,10 @@ entire southern sky visible to HIRAX, which we expect will take
 approximately four years.  As part of our site agreement, SARAO will
 provide access to power and data connections for HIRAX at least
 through the commencement of Square Kilometre Array (SKA) operations,
-which will give HIRAX time to complete the four year survey.  As part
-of the HIRAX installation, the University of KwaZulu-Natal will
+which will give HIRAX time to complete the four year survey.
+{\color{blue} The site development and dish production have been fully
+  funded for HIRAX-256, and the X-engine for HIRAX-512.}
+As part of the HIRAX installation, the University of KwaZulu-Natal will
 purchase and install a diesel rotary uninterruptible power supply
 (DRUPS) sufficient to power the full array.  At the completion of
 HIRAX operations, McGill will assume ownership of the DRUPS, and it
@@ -927,7 +950,8 @@ African partners to develop suitable dishes.  {\color{red}One of the
   the measured surface accuracy is 350$\mu$m RMS.  A full scale
   production-quality mold has been fabricated in South Africa, with a
   measured surface RMS of 800$\mu$m, less than 0.3\% of a wavelength.}
-A half-scale prototype dish and the production mold are shown in
+A half-scale prototype dish and the {\color{blue} the first full-sized
+  prototype made from the} production mold are shown in
 Figure \ref{fig:hirax_dishes}.
 %  A second route is laser-cut
 %metal dishes, with wire mesh attached to ribs. A full scale prototype
@@ -942,7 +966,7 @@ Figure \ref{fig:hirax_dishes}.
   Research Foundation (NRF) and the University of KwaZulu-Natal for
   hardware funding, along with significant funding (several million
   ZAR) for graduate students and postdocs.  Additionally, Swiss
-  collaborators have secured 393,000 CHF (520,000 CAD) to build a GPU
+  collaborators have secured 393,000 CHF (524,000 CAD) to build a GPU
   correlator that will work in concert with the \mbe.  The current
   commitments, with the availability of the \mbe, are enough to build
   and install at least 256 dishes.  The flexibility of the \mbe\ means
@@ -999,8 +1023,10 @@ Figure \ref{fig:hirax_dishes}.
     geographic advantage for low-frequency work}.  Chiang has already
   led an initial site survey on Axel Heiberg island in Nunavut, and
   the preliminary results suggest that the RFI environment is
-  outstanding, with no persistent contamination in the FM band.  The
-  radio instrumentation lab supported by this proposal will enable the
+  outstanding, with no persistent contamination in the FM band.}
+{\color{blue} Sievers has begun surveying areas in northern Qu\'ebec
+  which look promising for frequencies above 400 MHz.}
+{\color{red}The radio instrumentation lab supported by this proposal will enable the
   development of low-frequency antenna stations that will be installed
   in northern Canada, taking full advantage of the clean observing
   conditions.  The lab will also enable continued surveying efforts to
@@ -1029,8 +1055,8 @@ technical expertise and leadership experience needed to see the
 analysis, and he is well positioned to train highly qualified
 personnel to face the challenge of distilling meaningful scientific
 results from the deluge of data that the \mbe\ will generate.  Sievers
-has co-authored over 100 scientific publications, with over 10,000
-citations and an $h$-index of 54 (Google Scholar).  One key relevant
+has co-authored over 100 scientific publications, with over 11,000
+citations and an $h$-index of 59 (Google Scholar).  One key relevant
 contribution was developing new fast pipelines for searching for FRBs
 designed for use with HIRAX.  He and collaborators tested the pipeline
 on archival Green Bank Telescope (GBT) data, and in the process
@@ -1067,8 +1093,8 @@ SPIDER from the coastal McMurdo station.  She has worked on data
 analysis for the Planck satellite as a member of the High Frequency
 Instrument core team, and as a Planck Scientist, she was a member of
 the team that won the Gruber Prize in cosmology for 2018.  She has
-co-authored well over 160 scientific publications, with over 30,000
-citations (NASA ADS) and an $h$-index of 76.
+co-authored well over 160 scientific publications, with over 40,000
+citations (NASA ADS) and an $h$-index of 82.
 
 The broader HIRAX team has the strengths required for a successful
 experiment, with participation from around 25 institutions around the
@@ -1136,7 +1162,7 @@ in the world, trailing only CHIME\footnote{the total number of signals
   able to use the full capacity of the \mbe\ is fully funded.}
 %xxx
 
-Since the hardware will be essentially identical to the F-engine build
+Since the hardware will be essentially identical to the F-engine built
 by Matt Dobbs for CHIME, we have a very good indication of its cost.
 The ICE boards, digitizers, and custom backplanes, with development
 kit (which can also be used as spares in case of field failures), will
@@ -1153,7 +1179,8 @@ The RF-shielded enclosure,
  African HIRAX site will be \$125,708 CAD (budget item 7).  The cost
  is dominated by the custom RF shielding built into the container.
  Without the RF shielding, HIRAX will be blinded by radio emission
- from the \mbe.  The
+ from the \mbe, {\color{blue} and  would not be allowed to operate in
+ radio-protected sites where it would interfere with other telescopes}.  The
  container will be housed in a parking lot at McGill while the
  \mbe\ is being installed and tested, before field deployments.}
 % (includingtax on the Canadian-acquired components).  
@@ -1222,7 +1249,7 @@ McGill University has made a significant and sustained commitment to
 radio astronomy.  It has been a major part of the successful CFI
 proposal that built CHIME, and led the CFI proposal that added the
 capability to search CHIME data for fast radio bursts.  Without the
-extensive previous commitments from McGill, supported through Quebec
+extensive previous commitments from McGill, supported through Qu\'ebec
 and national funding, construction of the \mbe\ described here would
 not be possible.  It would require years of research and development,
 costing far more.
@@ -1245,7 +1272,7 @@ backstopping the power installation costs, which will include power
 and data line extensions and a transformer in addition to the DRUPS.
 UKZN has further agreed to pay the power bill for HIRAX, including the
 \mbe, during operations in South Africa.  The funding already secured
-for HIRAX is enough to build a 128-element array that will run through
+for HIRAX is enough to build a 256-element array that will run through
 the \mbe.
 
 With no moving parts, the reliability of the \mbe\ will be quite high
@@ -1274,11 +1301,14 @@ SUV-class vehicle.  {\color{red}Operations for these will come from
 While the most RFI-sensitive science cases may require truly remote
 locations in the far north (such as at the McGill Arctic Research
 Station on Axel Heiberg Island), the logistical challenges of larger
-scale deployments of the \mbe\ make road-accessible regions of Quebec
+scale deployments of the \mbe\ make road-accessible regions of Qu\'ebec
 the most natural place to search.  Costs associated with test antenna
 deployments in road-accessible regions to identify promising future
 sites will be modest, and Sievers will cover any further expenses
-required for these test deployments from C150 funds.
+required for these test deployments from C150 funds.  {\color{blue}We
+  have already begun preliminary testing along the Route de la Baie-James and
+  the Route du Nord.  Early results are promising enough to merit
+  further testing, especially at frequencies above 400 MHz.}
 
 \section{Benefits to Canada}
 
@@ -1300,7 +1330,7 @@ integrated, and tested at McGill.  While its first deployment will be
 overseas, the installation of the \mbe\ will cement McGill's position
 as a leading institution within HIRAX.  The construction of the radio
 lab at McGill by Cynthia Chiang will further strengthen the Canadian
-and Quebec radio astronomy profile.  In addition to the training of
+and Qu\'ebec radio astronomy profile.  In addition to the training of
 HQP, most of the equipment for the lab will be acquired through
 Canadian suppliers.  {\color{red} A significant fraction of the
   instrumentation developed in the radio lab will require custom
@@ -1311,7 +1341,7 @@ Canadian suppliers.  {\color{red} A significant fraction of the
   hardware (steel work and concrete foundations) was contracted out to
   local companies.  As part of the development efforts for the
   low-frequency antenna stations, we have already begun working with
-  several Quebec-based fabrication companies specializing in laser
+  several Qu\'ebec-based fabrication companies specializing in laser
   cutting, sheet metal work, and automation/controls, and we are in
   the early stages of identifying companies that can deliver power
   solutions for remote antenna installations (including green,
@@ -1334,13 +1364,13 @@ of this proposal is to build hardware to search for sites with very
 low amounts of radio-frequency interference (RFI) for the next
 deployment of the \mbe.  The ideal location for a large array is one
 with access to power and internet, but far from population centers.
-Northern Quebec is especially attractive for this due to the
+Northern Qu\'ebec is especially attractive for this due to the
 infrastructure accompanying the region's extensive hydropower
 generation.  Multiple fiber optic networks run north, operated by the
 Eeyou Communications Network.  One line runs along the James Bay road
 with several branches cutting west to service towns along the coast.
 A second line runs to the east, passing near Nemaska.  This level of
-infrastructure in some of the least densely populated areas in the
+infrastructure in some of the least densely populated areas of the
 planet is a truly unique opportunity.  With the revolution in radio
 astronomy enabled by infrastructure like the \mbe, the shift towards
 inexpensive dishes means we can hire local labour to build and install
@@ -1371,7 +1401,10 @@ artificial intelligence, another goal that is specifically highlighted
 by the SQRI.  Artificial intelligence has already been used to make
 significant progress in FRB searches, and this initial demonstration
 represents only the beginning of the full power that artificial
-intelligence techniques have to offer.  {\color{red} The above data-
+intelligence techniques have to offer.  {\color{blue}Sievers has begun
+  collaborating with Liam Connor to apply his machine learning
+  techniques \citep{Connor2018} to improve the FRB search pipeline for
+  HIRAX, making it sensitive to a wider variety of bursts.}  {\color{red} The above data-
   and computation-related skills are becoming rapidly and increasingly
   sought after in industry across the world.  HIRAX is a highly
   effective vehicle for cultivating the development of these skills,
@@ -1522,9 +1555,9 @@ other institutions in Canada and across the world.
 %\bibliographystyle{apj}
 %\bibliographystyle{abbrv}
 %\bibliographystyle{abbrvnat} - this was latest, JLS
-%\begin{small}
+\begin{small}
 \bibliographystyle{mybstv2}
 \bibliography{cfi_jelf_sievers}{}
-%\end{small}
+\end{small}
 %total - 1112+153+376+214+42+33*5
 \end{document}
